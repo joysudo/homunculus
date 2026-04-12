@@ -27,282 +27,458 @@
 </script>
 
 <div class="main-container">
-    {#each heroImages as img}
-        <img
-            class="hero-example"
-            src={img.src}
-            alt={img.alt}
-            style="
-                left: calc({img.x} * var(--w));
-                top: calc({img.y} * var(--h));
-                transform: translate(-50%, -50%);
-            "
-        />
-    {/each}
-    <img class="hero-example-main" src="https://placehold.co/853x379" alt="" />
-
-    <h2 class="title-main">WHAT IS GOLEM?</h2>
-    <p class="desc-main">this is filler text this is filler text i will write this after i fill in the other thing. you ship thing. this is filler text this is filler text i will write this after i fill in the other.</p>
-
-    <img class="info-homunculus" src="https://placehold.co/209x312" alt="" />
-
-    <div class="dark-strip dark-strip-top"></div>
-    <div class="dark-bg"></div>
-
-    <div class="light-frame"></div>
-    <div class="accent-bar accent-bar-v1"></div>
-    <div class="accent-bar accent-bar-v2 rotate-neg-90"></div>
-    <div class="accent-bar accent-bar-v3 rotate-pos-90"></div>
-
-    <h2 class="qualify-title">DO I QUALIFY?</h2>
-    
-    <div class="qualify-box">
-        <h3>As a student</h3>
-        <p>as a student, you need to blah blah blah blah blah and blah blah blah blah blah. honk shoo girl thats a golem thing thing thing sahur</p>
+    <!-- sections will be hero, info, qualify, guide, questions -->
+    <div class="hero-wrapper">
+        {#each heroImages as img}
+            <img
+                class="hero-example"
+                src={img.src}
+                alt={img.alt}
+                style="
+                    left: calc({img.x} * var(--w));
+                    top: calc({img.y} * var(--h));
+                    transform: translate(-50%, -50%);
+                "
+            />
+        {/each}
+        <img class="hero-logo" src="https://placehold.co/853x379" alt="" />
     </div>
-
-    <button class="btn-container btn-primary">Submit completed →</button>
-    <button class="btn-container btn-secondary">Get help →</button>
-
-    <div class="teacher-box">
-        <h3>As a teacher</h3>
-        <p>As a teacher, Homonculus is available as a unit, inc. After completing the unit, we’ll ship prizes directly to you to distribute.<br/>You can be eligible by meeting either of the:<br/>be part of a qualifying school district<br/>register with form</p>
+    <div class="info-wrapper">
+        <div></div>
+        <div>
+            <h2 class="info-title">WHAT IS GOLEM?</h2>
+            <p class="info-body">this is filler text this is filler text i will write this after i fill in the other thing. you ship thing. this is filler text this is filler text i will write this after i fill in the other.</p>
+        </div>
+        <div class="info-visual">
+            <img class="info-homunculus" src="https://placehold.co/209x312" alt="" />
+            <svg class="info-ground" viewBox="0 0 1440 71" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style="width: 100%; height: auto;">
+                <path d="M1108.19 0L1440 45.71L1438.12 71H0V0L144.699 45.71L480.499 18.88L831.268 45.71L1108.19 0Z" fill="var(--dark)"/>
+            </svg>
+        </div>
     </div>
-
-    <button class="btn-container btn-teacher">Submit form →</button>
-
-    <div class="dark-strip dark-strip-mid rotate-180"></div>
-
-    <h2 class="help-title">DON’T KNOW WHERE <br/>TO START?</h2>
-    
-    <div class="guide-box"></div>
-    <p class="guide-text">Read our guides →</p>
-
-    <img class="gallery-img gallery-img-1" src="https://placehold.co/1600x900" alt="" />
-    <img class="gallery-img gallery-img-2" src="https://placehold.co/1600x900" alt="" />
-    <img class="gallery-img gallery-img-3" src="https://placehold.co/1600x900" alt="" />
-
-    <img class="star-right" src="https://placehold.co/317x317" alt="" />
-    <img class="star-left" src="https://placehold.co/290x290" alt="" />
-    <img class="full-width-banner" src="https://placehold.co/1440x288" alt="" />
-
-    <h2 class="questions-title">QUESTIONS</h2>
-    
-    {#each faqs as faq, i}
-        <div
-            class="divider-line"
-            style="top: calc({4564 + i * 74} * var(--h));"
-        ></div>
-
-        <div
-            class="diamond-icon"
-            style="
-                left: calc(168.31 * var(--w));
-                top: calc({4577 + i * 74} * var(--h));
-            "
-        ></div>
-
-        <p
-            class="question-text"
-            style="top: calc({4585 + i * 74} * var(--h));"
-        >
-            {faq.question}
-        </p>
-
-        <p
-            class="question-text"
-            style="
-                top: calc({4620 + i * 74} * var(--h));
-                font-size: calc(28 * var(--h));
-                opacity: 0.8;
-            "
-        >
-            {faq.answer}
-        </p>
-    {/each}
-    <div class="divider-line" style="top: calc({4564 + faqs.length * 74} * var(--h));"></div>
-
-
-    <div class="divider-line divider-4"></div>
-
-    <img class="question-asset" src="https://placehold.co/170x234" alt="" />
-
-    <div class="footer-bg"></div>
-    <div class="dark-strip dark-strip-bottom rotate-180"></div>
-    <h2 class="footer-title">MADE BY JOY SU</h2>
-    <p class="footer-sub">
-        for <a href="https://hackclub.org">Hack Club</a>
-    </p>
-
+    <div class="qualify-wrapper">
+        <div class="student-box">
+            <svg class="svg-border top" viewBox="0 0 1440 71" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style="width: 100%; height: auto;">
+                <path d="M1108.19 0L1440 45.71L1438.12 71H0V0L144.699 45.71L480.499 18.88L831.268 45.71L1108.19 0Z" fill="var(--cream)"/>
+            </svg>
+            <svg class="svg-border right" viewBox="0 0 1440 71" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style="width: 100%; height: auto;">
+                <path d="M1108.19 0L1440 45.71L1438.12 71H0V0L144.699 45.71L480.499 18.88L831.268 45.71L1108.19 0Z" fill="var(--cream)"/>
+            </svg>
+            <svg class="svg-border bottom" viewBox="0 0 1440 71" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style="width: 100%; height: auto;">
+                <path d="M1108.19 0L1440 45.71L1438.12 71H0V0L144.699 45.71L480.499 18.88L831.268 45.71L1108.19 0Z" fill="var(--cream)"/>
+            </svg>
+            <h2 class="qualify-title">DO I QUALIFY?</h2>
+            <h3>As a student</h3>
+            <p>as a student, you need to blah blah blah blah blah and blah blah blah blah blah. honk shoo girl thats a golem thing thing thing sahur</p>
+            <button class="btn-container btn-light">Submit completed →</button>
+            <button class="btn-container btn-med">Get help →</button>
+        </div>
+        <div class="teacher-box">
+            <h3>As a teacher</h3>
+            <p>As a teacher, Homonculus is available as a unit, inc. After completing the unit, we’ll ship prizes directly to you to distribute.<br/>You can be eligible by meeting either of the:<br/>be part of a qualifying school district<br/>register with form</p>
+            <button class="btn-container btn-dark">Submit form →</button>
+        </div>
+    </div>
+    <div class="guide-wrapper">
+        <svg class="info-ground" viewBox="0 0 1440 71" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style="width: 100%; height: auto; transform: rotate(180deg); margin-top: -1px;">
+            <path d="M1108.19 0L1440 45.71L1438.12 71H0V0L144.699 45.71L480.499 18.88L831.268 45.71L1108.19 0Z" fill="var(--dark)"/>
+        </svg>
+        <img class="star star-right" src="https://placehold.co/317x317" alt="" />
+        <img class="star star-left" src="https://placehold.co/290x290" alt="" />
+        <h2 class="guide-title">DON’T KNOW WHERE <br/>TO START?</h2>
+        <div class="gallery-container">
+            <div>
+                <img src="https://placehold.co/1600x900" alt="" />
+                <img src="https://placehold.co/1600x900" alt="" />
+            </div>
+            <div>
+                <img src="https://placehold.co/1600x900" alt="" />
+                <button class="btn-container btn-med">Read our guides →</button>
+            </div>
+        </div>
+    </div>
+    <div class="questions-wrapper">
+        <img class="questions-decor" src="https://placehold.co/1440x288" alt="" />
+        <div class="questions-content">
+            <h2 class="questions-title">QUESTIONS</h2>    
+            {#each faqs as faq, i}
+                <div class="questions-divider"></div>
+                <div class="questions-header">
+                    <div class="questions-icon"></div>
+                    <p class="question-text">{faq.question}</p>
+                </div>
+                <p class="question-text"style="opacity: 0.8;">{faq.answer}</p>
+            {/each}
+            <div class="questions-divider" style="top: calc({4564 + faqs.length * 74} * var(--h));"></div>
+        </div>
+        <div style="position: relative">
+            <svg class="info-ground" viewBox="0 0 1440 71" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style="width: 100%; height: auto; transform: translateY(5px);">
+                <path d="M1108.19 0L1440 45.71L1438.12 71H0V0L144.699 45.71L480.499 18.88L831.268 45.71L1108.19 0Z" fill="var(--dark)"/>
+            </svg>
+            <img class="question-asset" src="https://placehold.co/170x234" alt="" />
+            <footer>
+                <h2 class="footer-title">MADE BY JOY SU</h2>
+                <p class="footer-sub">for <a href="https://hackclub.org">Hack Club</a></p>
+            </footer>
+        </div>
+    </div>
 </div>
 
 
-    <style>
-        :root {
-            --base-w: min(100vw, 177.78vh);
-            --base-h: min(56.25vw, 100vh);
-            --w: calc(var(--base-w) / 1440);
-            --h: calc(var(--base-h) / 1024);
-        }
+<style>
+    :root {
+        --base-w: 100vw;
+        --base-h: calc(100vw * 9 / 16);
+        --w: calc(var(--base-w) / 1440);
+        --h: calc(var(--base-h) / 1024);
+        --cream: #FEFAF4;
+        --dark: #1D1312;
+    }
 
-        :global(body), :global(html) {
-            margin: 0;
-            padding: 0;
-            background: #FEFAF4;
-            display: flex;
-            justify-content: center;
-        }
+    :global(body), :global(html) {
+        margin: 0;
+        padding: 0;
+        background: var(--cream);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
 
-        .main-container {
-            width: 100vw;
-            height: calc(5120 * var(--h));
-            position: relative;
-            background: #FEFAF4;
-            flex-shrink: 0;
-        }
+    .main-container {
+        width: 100vw;
+        height: calc(5*var(--base-h));
+        position: relative;
+        background: var(--cream);
+        display: flex;
+        flex-direction: column;
+        flex-shrink: 0;
+    }
 
-        .main-container > * {
-            position: absolute;
-            margin: 0;
-        }
+    .main-container > * {
+        margin: 0;
+    }
 
-        h2 {
-            font-family: 'Peich', sans-serif;
-            font-weight: 400;
-            line-height: calc(24 * var(--h));
-            word-wrap: break-word;
-        }
+    h2 {
+        font-family: 'Peich', sans-serif;
+        font-weight: 400;
+        line-height: 1;
+        word-wrap: break-word;
+        margin: 0;
+    }
 
-        h3 {
-            font-style: italic;
-        }
+    h3 {
+        font-family: 'Atkinson Hyperlegible Mono', monospace;
+        font-size: 1.5rem;
+        font-style: italic;
+        margin: 0;
+    }
 
-        p {
-            font-family: 'Atkinson Hyperlegible Mono', monospace;
-            font-weight: 400;
-            line-height: calc(35 * var(--h));
-            word-wrap: break-word;
-        }
+    p {
+        font-family: 'Atkinson Hyperlegible Mono', monospace;
+        font-weight: 400;
+        font-size: 1.25rem;
+        line-height: 1;
+        word-wrap: break-word;
+        margin: 1rem 0;
+    }
 
-        .hero-example {
-            width: calc(325 * var(--w));
-            aspect-ratio: 16 / 9;
-            object-fit: cover;
-            height: auto; 
-        }
+    .hero-wrapper {
+        width: var(--base-w);
+        min-height: var(--base-h) !important;
+        position: static;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        left: 0;
+        top: 0;
+    }
 
-        .hero-example-main { width: calc(853 * var(--w)); height: calc(379 * var(--h)); left: calc(293 * var(--w)); top: calc(312 * var(--h)); }
+    .hero-example {
+        width: calc(325 * var(--w));
+        aspect-ratio: 16 / 9;
+        object-fit: cover;
+        height: auto; 
+        position: absolute;
+    }
 
-        
-        .title-main {
-            left: calc(262 * var(--w)); top: calc(1329 * var(--h));
-            text-align: center; color: #1D1312; font-size: calc(150 * var(--h));
-        }
+    .hero-logo { 
+        width: 50vw;
+        height: auto;
+    }
 
-        .desc-main {
-            width: calc(907 * var(--w)); left: calc(266 * var(--w)); top: calc(1426 * var(--h));
-            text-align: center; color: #1D1312; font-size: calc(35 * var(--h));
-        }
+    .info-wrapper {
+        width: var(--base-w);
+        min-height: var(--base-h);
+        position: static;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+    }
 
-        .info-homunculus { 
-            width: calc(209 * var(--w)); 
-            height: calc(312 * var(--h)); 
-            left: calc(638 * var(--w)); 
-            top: calc(1736 * var(--h)); 
-        }
+    .info-wrapper > * {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
 
-        .dark-strip { width: calc(1430 * var(--w)); height: calc(71 * var(--h)); background: #1D1312; }
-        .dark-strip-top { top: calc(1978 * var(--h)); }
-        .dark-strip-mid { left: calc(1430 * var(--w)); top: calc(3143 * var(--h)); }
-        .dark-strip-bottom { left: calc(1420 * var(--w)); top: calc(4965 * var(--h)); }
+    .info-title {
+        text-align: center; 
+        color: var(--dark); 
+        font-size: calc(150 * var(--h));
+        line-height: 0.5; 
+        margin: 0;
+        padding-top: var(--base-h)*0.5 !important;
+    }
 
-        .dark-bg { width: calc(1440 * var(--w)); height: calc(1024 * var(--h)); background: #1D1312; top: calc(2048 * var(--h)); left: 0; }
-        
-        .light-frame { width: calc(720 * var(--w)); height: calc(768 * var(--h)); left: 0; top: calc(2176 * var(--h)); background: #FEFAF4; }
-        .accent-bar { width: calc(51 * var(--w)); height: calc(768 * var(--h)); background: #FEFAF4; }
-        .accent-bar-v1 { left: calc(720 * var(--w)); top: calc(2176 * var(--h)); }
-        .accent-bar-v2 { left: 0; top: calc(2176 * var(--h)); height: calc(762 * var(--h)); }
-        .accent-bar-v3 { left: calc(731 * var(--w)); top: calc(2944 * var(--h)); height: calc(731 * var(--h)); }
-        
-        .rotate-neg-90 { transform: rotate(-90deg); transform-origin: top left; }
-        .rotate-pos-90 { transform: rotate(90deg); transform-origin: top left; }
-        .rotate-180 { transform: rotate(-180deg); transform-origin: top left; }
+    .info-body {
+        text-align: center; 
+        color: var(--dark); 
+        margin: 1rem 20vw;
+    }    
 
-        .qualify-title { left: calc(141 * var(--w)); top: calc(2344 * var(--h)); color: #1D1312; font-size: calc(90 * var(--h)); }
-        
-        .qualify-box { width: calc(515 * var(--w)); left: calc(141 * var(--w)); top: calc(2435 * var(--h)); }
+    .info-visual {
+        width: 100vw;
+        position: relative;
+        justify-content: flex-end;
+    }
 
-        .teacher-box { width: calc(522 * var(--w)); left: calc(835 * var(--w)); top: calc(2323 * var(--h)); color: #FEFAF4; }
+    .info-homunculus {
+        position: absolute;
+        width: 10vw;
+        height: auto;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: calc(71 * var(--h) * 0.33);  
+        z-index: 2;
+    }
 
-        .btn-container {
-            width: calc(515 * var(--w)); height: calc(82 * var(--h)); 
-            border: calc(4 * var(--h)) #1D1312 solid;
-            display: flex;
-            align-items: center;
-            padding-left: calc(29 * var(--w));
-            box-sizing: border-box;
-            font-size: calc(35 * var(--h)); 
-            font-weight: 700; 
-            line-height: calc(24 * var(--h));
-            font-family: 'Atkinson Hyperlegible Mono', monospace;
-        }
-        
-        .btn-primary { background: #FEFAF4; color: #1D1312; top: calc(2707 * var(--h)); left: calc(141 * var(--w)); }
-        .btn-secondary { background: rgba(29, 19, 18, 0.10); color: #1D1312; top: calc(2801 * var(--h)); left: calc(141 * var(--w)); }
-        .btn-teacher { border-color: #FEFAF4; color: #FEFAF4; left: calc(835 * var(--w)); top: calc(2764 * var(--h)); }
+    .info-ground { 
+        position: relative;
+        width: 100%;
+        height: auto;
+        margin-bottom: -1px;
+    }
 
+    .qualify-wrapper { 
+        width: 100vw; 
+        min-height: var(--base-h); 
+        background: var(--dark); 
+        display: flex;
+        align-items: center;
+        position: relative;
+        flex-grow: 1;
+    }
 
-        .help-title {
-            left: calc(283 * var(--w)); top: calc(3270 * var(--h));
-            text-align: center; color: #1D1312; font-size: calc(125 * var(--h)); line-height: calc(90 * var(--h));
-        }
+    .qualify-title {font-size: calc(90 * var(--h)); } 
 
-        .guide-box {
-            width: calc(258 * var(--w)); height: calc(135 * var(--h)); left: calc(937 * var(--w)); top: calc(3808 * var(--h));
-            background: rgba(29, 19, 18, 0.10); border: calc(4 * var(--h)) #1D1312 solid;
-        }
+    .student-box {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        background-color: var(--cream);
+        color: var(--dark);
+        height: 70%;
+        padding-left: 5vw;
+        padding-right: 1vw;
+    }
 
-        .guide-text {
-            width: calc(229 * var(--w)); left: calc(966 * var(--w)); top: calc(3840 * var(--h));
-            color: #1D1312; font-size: calc(35 * var(--h)); font-weight: 700;
-        }
+    .svg-border {
+        position: absolute;
+        width: 100%;
+        height: auto;
+    }
 
-        .gallery-img { width: calc(480 * var(--w)); height: calc(270 * var(--h)); border: calc(5 * var(--h)) #1E1313 solid; display: block;}
-        .gallery-img-1 { left: calc(209 * var(--w)); top: calc(3464 * var(--h)); }
-        .gallery-img-2 { left: calc(725 * var(--w)); top: calc(3464 * var(--h)); }
-        .gallery-img-3 { left: calc(417 * var(--w)); top: calc(3676 * var(--h)); }
+    .top {
+        top: 0%;
+        right: 0%;
+        transform: translateY(-100%);
+    }
 
-        .star-right { width: calc(317 * var(--w)); height: calc(317 * var(--h)); left: calc(1052 * var(--w)); top: calc(3329 * var(--h)); }
-        .star-left { width: calc(290 * var(--w)); height: calc(290 * var(--h)); left: calc(119 * var(--w)); top: calc(3632 * var(--h)); }
+    .right {
+        top: 0%; 
+        left: 100%;
+        width: calc(0.7 * var(--base-h)) !important;
+        height: auto !important;
+        transform-origin: top left;
+        transform: rotate(90deg) translateY(-100%);
+        color: var(--cream);
+    }
 
-        .full-width-banner { width: calc(1440 * var(--w)); height: calc(288 * var(--h)); left: 0; top: calc(4064 * var(--h)); }
+    .bottom {
+        bottom: 0%;
+        left: 0%;
+        transform-origin: center;
+        transform: rotate(-180deg) translateY(-100%);
+        margin-bottom: 1px;
+    }
 
-        .questions-title { left: calc(141 * var(--w)); top: calc(4470 * var(--h)); color: #1D1312; font-size: calc(125 * var(--h)); }
-        
-        .divider-line {
-            width: calc(1168 * var(--w)); height: 0; left: calc(141 * var(--w));
-            outline: calc(3 * var(--h)) #1D1312 solid; outline-offset: calc(-1.5 * var(--h));
-        }
-        .diamond-icon {
-            width: calc(16 * var(--w)); height: calc(16 * var(--h)); border: calc(3 * var(--h)) #1D1312 solid;
-            transform: rotate(45deg); transform-origin: top left;
-        }
-        .question-text {
-            width: calc(1100 * var(--w)); left: calc(209 * var(--w)); color: #1D1312; font-size: calc(35 * var(--h));
-        }
+    .teacher-box {
+        color: var(--cream); 
+        padding: 0 5vw;
+    }
 
-        .question-asset { width: calc(170 * var(--w)); height: calc(234 * var(--h)); left: calc(1174 * var(--w)); top: calc(4709 * var(--h)); }
+    .btn-container {
+        padding: 0.5rem;
+        display: flex;
+        align-items: center;
+        box-sizing: border-box;
+        font-weight: 700; 
+        font-family: 'Atkinson Hyperlegible Mono', monospace;
+        margin-bottom: 0.5rem;
+    }
 
-        .footer-bg { width: calc(1440 * var(--w)); height: calc(155 * var(--h)); left: 0; top: calc(4965 * var(--h)); background: #1D1312; }
-        
-        .footer-title {
-            width: calc(521 * var(--w)); left: calc(459 * var(--w)); top: calc(4999 * var(--h));
-            text-align: center; color: #FEFAF4; font-size: calc(75 * var(--h));
-        }
+    .btn-light { border-color: var(--dark); background: var(--cream); color: var(--dark); }
+    .btn-med { border-color: var(--dark); background: color-mix(in srgb, var(--cream), var(--dark) 10%); color: var(--dark);}
+    .btn-dark { border-color: var(--cream); background: color-mix(in srgb, var(--cream), var(--dark) 90%); color: var(--cream); }
 
-        .footer-sub {
-            width: calc(428 * var(--w)); height: calc(20 * var(--h)); left: calc(506 * var(--w)); top: calc(5044 * var(--h));
-            text-align: center; color: #FEFAF4; font-size: calc(35 * var(--h));
-        }
+    .guide-wrapper {
+        width: var(--base-w);
+        min-height: var(--base-h);
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-color: pink;
+    }
 
-    </style>
+    .guide-wrapper > * {
+        transform: translateY(3vw);
+    }
+
+    .star {
+        position: absolute;
+        width: 15vw; 
+        height: auto;
+        z-index: 10;
+    }
+
+    .star-right { 
+        left: 75vw;
+        top: calc(0.1*var(--base-h));
+    }
+
+    .star-left { 
+        left: 10vw;
+        bottom: calc(0.125*var(--base-h));
+    }
+
+    .guide-title {
+        text-align: center; 
+        color: var(--dark); 
+        font-size: calc(90 * var(--h)); 
+        line-height: 0.8;
+    }
+
+    .gallery-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .gallery-container > div {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .gallery-container > :last-child {
+        transform: translateY(-25%);
+    }
+
+    .gallery-container img {
+        width: calc(40vw);
+        height: auto;
+        border: 3px var(--dark) solid;
+    }
+
+    .gallery-container button {
+        width: fit-content;
+    }
+
+    .questions-wrapper {
+        width: var(--base-w);
+        min-height: var(--base-h);
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .questions-wrapper p {
+        margin: 0.25rem 0;
+    }
+
+    .questions-decor {
+        width: 100%;
+        height: auto;
+    }
+
+    .questions-content {
+        margin: 5vw;
+    }
+
+    .questions-title { 
+        font-size: calc(125 * var(--h));
+        color: var(--dark); 
+    }
+    
+    .questions-header {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .questions-divider {
+        width: 100%;
+        width: calc(1168 * var(--w)); height: 0; left: calc(141 * var(--w));
+        outline: calc(3 * var(--h)) var(--dark) solid; outline-offset: calc(-1.5 * var(--h));
+    }
+    .questions-icon {
+        width: 0;
+        height: 0;
+        border-left: 5px solid transparent;
+        border-right: 5px solid transparent;
+        border-top: 5px solid var(--dark);
+    }
+
+    .question-text {
+        color: var(--dark); 
+    }
+
+    .question-asset {
+        position: absolute;
+        width: 10vw; 
+        height: auto; 
+        left: 85vw; 
+        transform: translateY(-50%);
+        z-index: 10;
+    }
+
+    footer {
+        width: 100vw;
+        background: var(--dark);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 1rem;
+        padding-bottom: 2rem;
+    }
+
+    footer h2 {
+        text-align: center; color: 
+        var(--cream); 
+        font-size: calc(75 * var(--h));
+    }
+
+    footer p {
+        text-align: center; 
+        color: var(--cream); 
+        font-size: calc(35 * var(--h));
+    }
+</style>
