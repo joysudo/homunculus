@@ -24,6 +24,11 @@
             answer: "More details about the process."
         }
     ];
+    // svelte-ignore non_reactive_update
+    let faqIndex = $state<number | null>(null);
+    function toggle(i: number) {
+        if (faqIndex === i) faqIndex = null; else faqIndex = i;
+    }
 </script>
 
 <div class="main-container">
@@ -46,7 +51,7 @@
     <div class="info-wrapper">
         <div></div>
         <div>
-            <h2 class="info-title">WHAT IS GOLEM?</h2>
+            <h2 class="info-title">WHAT IS HOMUNCULUS?</h2>
             <p class="info-body">this is filler text this is filler text i will write this after i fill in the other thing. you ship thing. this is filler text this is filler text i will write this after i fill in the other.</p>
         </div>
         <div class="info-visual">
@@ -103,11 +108,13 @@
             <h2 class="questions-title">QUESTIONS</h2>    
             {#each faqs as faq, i}
                 <div class="questions-divider"></div>
-                <div class="questions-header">
+                <button class="questions-header" onclick={() => toggle(i)}>
                     <div class="questions-icon"></div>
                     <p class="question-text">{faq.question}</p>
-                </div>
-                <p class="question-text"style="opacity: 0.8;">{faq.answer}</p>
+                </button>
+                {#if faqIndex === i} 
+                    <p class="question-text"style="opacity: 0.8;">{faq.answer}</p>
+                {/if}
             {/each}
             <div class="questions-divider" style="top: calc({4564 + faqs.length * 74} * var(--h));"></div>
         </div>
@@ -176,7 +183,7 @@
     p {
         font-family: 'Atkinson Hyperlegible Mono', monospace;
         font-weight: 400;
-        font-size: 1.25rem;
+        font-size: clamp(1.25rem, 2vw, 3rem);
         line-height: 1;
         word-wrap: break-word;
         margin: 1rem 0;
@@ -302,7 +309,7 @@
         width: calc(0.7 * var(--base-h)) !important;
         height: auto !important;
         transform-origin: top left;
-        transform: rotate(90deg) translateY(-100%);
+        transform: rotate(90deg) translateY(-99%);
         color: var(--cream);
     }
 
@@ -341,7 +348,6 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        background-color: pink;
     }
 
     .guide-wrapper > * {
@@ -429,6 +435,8 @@
     }
     
     .questions-header {
+        all: unset;
+        cursor: pointer;
         display: flex;
         align-items: center;
         gap: 1rem;
@@ -449,6 +457,7 @@
 
     .question-text {
         color: var(--dark); 
+        padding: 0.2rem;
     }
 
     .question-asset {
