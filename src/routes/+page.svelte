@@ -1,94 +1,84 @@
 
 <div class="main-container">
-    <img class="absolute hero-img-1" src="https://placehold.co/269x214" alt="" />
-    <img class="absolute hero-img-2" src="https://placehold.co/270x214" alt="" />
-    <img class="absolute hero-img-3" src="https://placehold.co/317x214" alt="" />
-    <img class="absolute hero-img-4" src="https://placehold.co/310x214" alt="" />
-    <img class="absolute hero-img-5" src="https://placehold.co/261x214" alt="" />
-    <img class="absolute hero-img-6" src="https://placehold.co/305x214" alt="" />
-    <img class="absolute hero-img-7" src="https://placehold.co/330x214" alt="" />
-    <img class="absolute hero-img-8" src="https://placehold.co/269x214" alt="" />
-    <img class="absolute hero-img-main" src="https://placehold.co/853x379" alt="" />
+    <img class="hero-example hero-example-1" src="https://placehold.co/1600x900" alt="" />
+    <img class="hero-example hero-example-2" src="https://placehold.co/1600x900" alt="" />
+    <img class="hero-example hero-example-3" src="https://placehold.co/1600x900" alt="" />
+    <img class="hero-example hero-example-4" src="https://placehold.co/1600x900" alt="" />
+    <img class="hero-example hero-example-5" src="https://placehold.co/1600x900" alt="" />
+    <img class="hero-example hero-example-6" src="https://placehold.co/1600x900" alt="" />
+    <img class="hero-example hero-example-7" src="https://placehold.co/1600x900" alt="" />
+    <img class="hero-example hero-example-8" src="https://placehold.co/1600x900" alt=""/>
+    <img class="hero-example-main" src="https://placehold.co/853x379" alt="" />
 
-    <div class="absolute section-spacer"></div>
-    <div class="absolute title-main text-peich">WHAT IS GOLEM?</div>
-    <div class="absolute desc-main text-mono">
-        this is filler text this is filler text i will write this after i fill in the other thing. you ship thing. this is filler text this is filler text i will write this after i fill in the other.
-    </div>
+    <h2 class="title-main">WHAT IS GOLEM?</h2>
+    <p class="desc-main">this is filler text this is filler text i will write this after i fill in the other thing. you ship thing. this is filler text this is filler text i will write this after i fill in the other.</p>
 
-    <img class="absolute icon-sm" src="https://placehold.co/91x84" alt="" />
-    <img class="absolute icon-lg" src="https://placehold.co/209x312" alt="" />
+    <img class="info-homunculus" src="https://placehold.co/209x312" alt="" />
 
-    <div class="absolute dark-strip dark-strip-top"></div>
-    <div class="absolute dark-bg"></div>
+    <div class="dark-strip dark-strip-top"></div>
+    <div class="dark-bg"></div>
 
-    <div class="absolute light-frame"></div>
-    <div class="absolute accent-bar accent-bar-v1"></div>
-    <div class="absolute accent-bar accent-bar-v2 rotate-neg-90"></div>
-    <div class="absolute accent-bar accent-bar-v3 rotate-pos-90"></div>
+    <div class="light-frame"></div>
+    <div class="accent-bar accent-bar-v1"></div>
+    <div class="accent-bar accent-bar-v2 rotate-neg-90"></div>
+    <div class="accent-bar accent-bar-v3 rotate-pos-90"></div>
 
-    <div class="absolute qualify-title text-peich">DO I QUALIFY?</div>
+    <h2 class="qualify-title">DO I QUALIFY?</h2>
     
-    <div class="absolute qualify-box text-mono">
-        <span class="qualify-label">As a student<br/></span>
-        <span class="qualify-body">as a student, you need to blah blah blah blah blah and blah blah blah blah blah. honk shoo girl thats a golem thing thing thing sahur</span>
+    <div class="qualify-box">
+        <h3>As a student</h3>
+        <p>as a student, you need to blah blah blah blah blah and blah blah blah blah blah. honk shoo girl thats a golem thing thing thing sahur</p>
     </div>
 
-    <div class="absolute btn-container btn-primary">
-        <span class="btn-text text-mono">Submit completed →</span>
-    </div>
-    <div class="absolute btn-container btn-secondary">
-        <span class="btn-text text-mono">Get help →</span>
-    </div>
+    <button class="btn-container btn-primary">Submit completed →</button>
+    <button class="btn-container btn-secondary">Get help →</button>
 
-    <div class="absolute teacher-box text-mono">
-        <span class="qualify-label">As a teacher<br/></span>
-        <span class="qualify-body">Homonculus is available as a unit, inc. After completing the unit, we’ll ship prizes directly to you to distribute.<br/>You can be eligible by meeting either of the:<br/>be part of a qualifying school district<br/>register with form</span>
+    <div class="teacher-box">
+        <h3>As a teacher</h3>
+        <p>As a teacher, Homonculus is available as a unit, inc. After completing the unit, we’ll ship prizes directly to you to distribute.<br/>You can be eligible by meeting either of the:<br/>be part of a qualifying school district<br/>register with form</p>
     </div>
 
-    <div class="absolute btn-container btn-teacher">
-        <span class="btn-text text-mono">Submit form →</span>
-    </div>
+    <button class="btn-container btn-teacher">Submit form →</button>
 
-    <div class="absolute dark-strip dark-strip-mid rotate-180"></div>
+    <div class="dark-strip dark-strip-mid rotate-180"></div>
 
-    <div class="absolute help-title text-peich">DON’T KNOW WHERE <br/>TO START?</div>
+    <h2 class="help-title">DON’T KNOW WHERE <br/>TO START?</h2>
     
-    <div class="absolute guide-box"></div>
-    <div class="absolute guide-text text-mono">Read our guides →</div>
+    <div class="guide-box"></div>
+    <p class="guide-text">Read our guides →</p>
 
-    <img class="absolute gallery-img gallery-img-1" src="https://placehold.co/480x312" alt="" />
-    <img class="absolute gallery-img gallery-img-2" src="https://placehold.co/480x312" alt="" />
-    <img class="absolute gallery-img gallery-img-3" src="https://placehold.co/480x312" alt="" />
+    <img class="gallery-img gallery-img-1" src="https://placehold.co/1600x900" alt="" />
+    <img class="gallery-img gallery-img-2" src="https://placehold.co/1600x900" alt="" />
+    <img class="gallery-img gallery-img-3" src="https://placehold.co/1600x900" alt="" />
 
-    <img class="absolute square-img-lg" src="https://placehold.co/317x317" alt="" />
-    <img class="absolute square-img-md" src="https://placehold.co/290x290" alt="" />
-    <img class="absolute full-width-banner" src="https://placehold.co/1440x288" alt="" />
+    <img class="square-img-lg" src="https://placehold.co/317x317" alt="" />
+    <img class="square-img-md" src="https://placehold.co/290x290" alt="" />
+    <img class="full-width-banner" src="https://placehold.co/1440x288" alt="" />
 
-    <div class="absolute questions-title text-peich">QUESTIONS</div>
+    <h2 class="questions-title">QUESTIONS</h2>
     
-    <div class="absolute divider-line divider-1"></div>
-    <div class="absolute diamond-icon diamond-1"></div>
-    <div class="absolute question-text text-mono q-text-1">This is a question about how something works.</div>
+    <div class="divider-line divider-1"></div>
+    <div class="diamond-icon diamond-1"></div>
+    <p class="question-text q-text-1">This is a question about how something works.</p>
 
-    <div class="absolute divider-line divider-2"></div>
-    <div class="absolute diamond-icon diamond-2"></div>
-    <div class="absolute question-text text-mono q-text-2">This is a question about how something works.</div>
+    <div class="divider-line divider-2"></div>
+    <div class="diamond-icon diamond-2"></div>
+    <p class="question-text q-text-2">This is a question about how something works.</p>
 
-    <div class="absolute divider-line divider-3"></div>
-    <div class="absolute diamond-icon diamond-3"></div>
-    <div class="absolute question-text text-mono q-text-3">This is a question about how something works.</div>
+    <div class="divider-line divider-3"></div>
+    <div class="diamond-icon diamond-3"></div>
+    <p class="question-text q-text-3">This is a question about how something works.</p>
 
-    <div class="absolute divider-line divider-4"></div>
+    <div class="divider-line divider-4"></div>
 
-    <img class="absolute question-asset" src="https://placehold.co/170x234" alt="" />
+    <img class="question-asset" src="https://placehold.co/170x234" alt="" />
 
-    <div class="absolute footer-bg"></div>
-    <div class="absolute dark-strip dark-strip-bottom rotate-180"></div>
-    <div class="absolute footer-title text-peich">MADE BY JOY SU</div>
-    <div class="absolute footer-sub text-mono">
-        for <span class="underline">Hack Club</span>
-    </div>
+    <div class="footer-bg"></div>
+    <div class="dark-strip dark-strip-bottom rotate-180"></div>
+    <h2 class="footer-title">MADE BY JOY SU</h2>
+    <p class="footer-sub">
+        for <a href="https://hackclub.org">Hack Club</a>
+    </p>
 
 </div>
 
@@ -110,43 +100,53 @@
         }
 
         .main-container {
-            width: calc(1440 * var(--w));
+            width: 100vw;
             height: calc(5120 * var(--h));
             position: relative;
             background: #FEFAF4;
-            overflow: hidden;
             flex-shrink: 0;
         }
 
-        .text-peich {
+        .main-container > * {
+            position: absolute;
+            margin: 0;
+        }
+
+        h2 {
             font-family: 'Peich', sans-serif;
             font-weight: 400;
             line-height: calc(24 * var(--h));
             word-wrap: break-word;
         }
 
-        .text-mono {
+        h3 {
+            font-style: italic;
+        }
+
+        p {
             font-family: 'Atkinson Hyperlegible Mono', monospace;
             font-weight: 400;
             line-height: calc(35 * var(--h));
             word-wrap: break-word;
         }
 
-        .absolute {
-            position: absolute;
+        .hero-example {
+            width: calc(325 * var(--w));
+            aspect-ratio: 16 / 9;
+            object-fit: cover;
+            height: auto; 
         }
 
-        .hero-img-1 { width: calc(269 * var(--w)); height: calc(214 * var(--h)); left: calc(837 * var(--w)); top: calc(691 * var(--h)); }
-        .hero-img-2 { width: calc(270 * var(--w)); height: calc(214 * var(--h)); left: calc(714 * var(--w)); top: calc(119 * var(--h)); }
-        .hero-img-3 { width: calc(317 * var(--w)); height: calc(214 * var(--h)); left: calc(307 * var(--w)); top: calc(142 * var(--h)); }
-        .hero-img-4 { width: calc(310 * var(--w)); height: calc(214 * var(--h)); left: calc(1016 * var(--w)); top: calc(214 * var(--h)); }
-        .hero-img-5 { width: calc(261 * var(--w)); height: calc(214 * var(--h)); left: calc(93 * var(--w)); top: calc(368 * var(--h)); }
-        .hero-img-6 { width: calc(305 * var(--w)); height: calc(214 * var(--h)); left: calc(1042 * var(--w)); top: calc(462 * var(--h)); }
-        .hero-img-7 { width: calc(330 * var(--w)); height: calc(214 * var(--h)); left: calc(159 * var(--w)); top: calc(620 * var(--h)); }
-        .hero-img-8 { width: calc(269 * var(--w)); height: calc(214 * var(--h)); left: calc(528 * var(--w)); top: calc(711 * var(--h)); }
-        .hero-img-main { width: calc(853 * var(--w)); height: calc(379 * var(--h)); left: calc(293 * var(--w)); top: calc(312 * var(--h)); }
+        .hero-example-1 { left: calc(837 * var(--w)); top: calc(691 * var(--h)); }
+        .hero-example-2 { left: calc(714 * var(--w)); top: calc(119 * var(--h)); }
+        .hero-example-3 { left: calc(307 * var(--w)); top: calc(142 * var(--h)); }
+        .hero-example-4 { left: calc(1016 * var(--w)); top: calc(214 * var(--h)); }
+        .hero-example-5 { left: calc(93 * var(--w)); top: calc(368 * var(--h)); }
+        .hero-example-6 { left: calc(1042 * var(--w)); top: calc(462 * var(--h)); }
+        .hero-example-7 { left: calc(159 * var(--w)); top: calc(620 * var(--h)); }
+        .hero-example-8 { left: calc(528 * var(--w)); top: calc(711 * var(--h)); }
+        .hero-example-main { width: calc(853 * var(--w)); height: calc(379 * var(--h)); left: calc(293 * var(--w)); top: calc(312 * var(--h)); }
 
-        .section-spacer { width: calc(1440 * var(--w)); height: calc(1024 * var(--h)); left: 0; top: calc(1024 * var(--h)); }
         
         .title-main {
             left: calc(262 * var(--w)); top: calc(1329 * var(--h));
@@ -158,8 +158,12 @@
             text-align: center; color: #1D1312; font-size: calc(35 * var(--h));
         }
 
-        .icon-sm { width: calc(91 * var(--w)); height: calc(84 * var(--h)); left: calc(744 * var(--w)); top: calc(1671 * var(--h)); }
-        .icon-lg { width: calc(209 * var(--w)); height: calc(312 * var(--h)); left: calc(638 * var(--w)); top: calc(1736 * var(--h)); }
+        .info-homunculus { 
+            width: calc(209 * var(--w)); 
+            height: calc(312 * var(--h)); 
+            left: calc(638 * var(--w)); 
+            top: calc(1736 * var(--h)); 
+        }
 
         .dark-strip { width: calc(1440 * var(--w)); height: calc(71 * var(--h)); background: #1D1312; }
         .dark-strip-top { top: calc(1978 * var(--h)); }
@@ -181,8 +185,6 @@
         .qualify-title { left: calc(141 * var(--w)); top: calc(2344 * var(--h)); color: #1D1312; font-size: calc(90 * var(--h)); }
         
         .qualify-box { width: calc(515 * var(--w)); left: calc(141 * var(--w)); top: calc(2435 * var(--h)); }
-        .qualify-label { font-style: italic; font-weight: 700; font-size: calc(40 * var(--h)); }
-        .qualify-body { font-size: calc(32 * var(--h)); }
 
         .teacher-box { width: calc(522 * var(--w)); left: calc(835 * var(--w)); top: calc(2323 * var(--h)); color: #FEFAF4; }
 
@@ -193,13 +195,16 @@
             align-items: center;
             padding-left: calc(29 * var(--w));
             box-sizing: border-box;
+            font-size: calc(35 * var(--h)); 
+            font-weight: 700; 
+            line-height: calc(24 * var(--h));
+            font-family: 'Atkinson Hyperlegible Mono', monospace;
         }
         
         .btn-primary { background: #FEFAF4; color: #1D1312; top: calc(2707 * var(--h)); left: calc(141 * var(--w)); }
         .btn-secondary { background: rgba(29, 19, 18, 0.10); color: #1D1312; top: calc(2801 * var(--h)); left: calc(141 * var(--w)); }
         .btn-teacher { border-color: #FEFAF4; color: #FEFAF4; left: calc(835 * var(--w)); top: calc(2764 * var(--h)); }
 
-        .btn-text { font-size: calc(35 * var(--h)); font-weight: 700; line-height: calc(24 * var(--h)); }
 
         .help-title {
             left: calc(283 * var(--w)); top: calc(3270 * var(--h));
@@ -216,7 +221,7 @@
             color: #1D1312; font-size: calc(35 * var(--h)); font-weight: 700;
         }
 
-        .gallery-img { width: calc(480 * var(--w)); height: calc(312 * var(--h)); border: calc(5 * var(--h)) #1E1313 solid; }
+        .gallery-img { width: calc(480 * var(--w)); height: calc(270 * var(--h)); border: calc(5 * var(--h)) #1E1313 solid; display: block;}
         .gallery-img-1 { left: calc(209 * var(--w)); top: calc(3464 * var(--h)); }
         .gallery-img-2 { left: calc(725 * var(--w)); top: calc(3464 * var(--h)); }
         .gallery-img-3 { left: calc(417 * var(--w)); top: calc(3676 * var(--h)); }
@@ -238,7 +243,7 @@
         .divider-4 { top: calc(4786 * var(--h)); }
 
         .diamond-icon {
-            width: calc(34.68 * var(--w)); height: calc(16 * var(--h)); border: calc(3 * var(--h)) #1D1312 solid;
+            width: calc(16 * var(--w)); height: calc(16 * var(--h)); border: calc(3 * var(--h)) #1D1312 solid;
             transform: rotate(45deg); transform-origin: top left;
         }
         .diamond-1 { left: calc(168.31 * var(--w)); top: calc(4577 * var(--h)); }
@@ -265,7 +270,5 @@
             width: calc(428 * var(--w)); height: calc(20 * var(--h)); left: calc(506 * var(--w)); top: calc(5044 * var(--h));
             text-align: center; color: #FEFAF4; font-size: calc(35 * var(--h));
         }
-
-        .underline { text-decoration: underline; }
 
     </style>
