@@ -1,13 +1,44 @@
+<script lang="ts">
+    const heroImages = [
+        { src: "https://placehold.co/1600x900", alt: "", x: 995, y: 780 },
+        { src: "https://placehold.co/1600x900", alt: "", x: 850, y: 210 },
+        { src: "https://placehold.co/1600x900", alt: "", x: 465, y: 230 },
+        { src: "https://placehold.co/1600x900", alt: "", x: 1175, y: 305 },
+        { src: "https://placehold.co/1600x900", alt: "", x: 255, y: 460 },
+        { src: "https://placehold.co/1600x900", alt: "", x: 1200, y: 550 },
+        { src: "https://placehold.co/1600x900", alt: "", x: 320, y: 710 },
+        { src: "https://placehold.co/1600x900", alt: "", x: 660, y: 800 }
+    ];
+
+    const faqs = [
+        {
+            question: "This is a question about how something works.",
+            answer: "This is the answer explaining how it works."
+        },
+        {
+            question: "This is a question about how something works.",
+            answer: "Another explanation goes here."
+        },
+        {
+            question: "This is a question about how something works.",
+            answer: "More details about the process."
+        }
+    ];
+</script>
 
 <div class="main-container">
-    <img class="hero-example hero-example-1" src="https://placehold.co/1600x900" alt="" />
-    <img class="hero-example hero-example-2" src="https://placehold.co/1600x900" alt="" />
-    <img class="hero-example hero-example-3" src="https://placehold.co/1600x900" alt="" />
-    <img class="hero-example hero-example-4" src="https://placehold.co/1600x900" alt="" />
-    <img class="hero-example hero-example-5" src="https://placehold.co/1600x900" alt="" />
-    <img class="hero-example hero-example-6" src="https://placehold.co/1600x900" alt="" />
-    <img class="hero-example hero-example-7" src="https://placehold.co/1600x900" alt="" />
-    <img class="hero-example hero-example-8" src="https://placehold.co/1600x900" alt=""/>
+    {#each heroImages as img}
+        <img
+            class="hero-example"
+            src={img.src}
+            alt={img.alt}
+            style="
+                left: calc({img.x} * var(--w));
+                top: calc({img.y} * var(--h));
+                transform: translate(-50%, -50%);
+            "
+        />
+    {/each}
     <img class="hero-example-main" src="https://placehold.co/853x379" alt="" />
 
     <h2 class="title-main">WHAT IS GOLEM?</h2>
@@ -51,23 +82,46 @@
     <img class="gallery-img gallery-img-2" src="https://placehold.co/1600x900" alt="" />
     <img class="gallery-img gallery-img-3" src="https://placehold.co/1600x900" alt="" />
 
-    <img class="square-img-lg" src="https://placehold.co/317x317" alt="" />
-    <img class="square-img-md" src="https://placehold.co/290x290" alt="" />
+    <img class="star-right" src="https://placehold.co/317x317" alt="" />
+    <img class="star-left" src="https://placehold.co/290x290" alt="" />
     <img class="full-width-banner" src="https://placehold.co/1440x288" alt="" />
 
     <h2 class="questions-title">QUESTIONS</h2>
     
-    <div class="divider-line divider-1"></div>
-    <div class="diamond-icon diamond-1"></div>
-    <p class="question-text q-text-1">This is a question about how something works.</p>
+    {#each faqs as faq, i}
+        <div
+            class="divider-line"
+            style="top: calc({4564 + i * 74} * var(--h));"
+        ></div>
 
-    <div class="divider-line divider-2"></div>
-    <div class="diamond-icon diamond-2"></div>
-    <p class="question-text q-text-2">This is a question about how something works.</p>
+        <div
+            class="diamond-icon"
+            style="
+                left: calc(168.31 * var(--w));
+                top: calc({4577 + i * 74} * var(--h));
+            "
+        ></div>
 
-    <div class="divider-line divider-3"></div>
-    <div class="diamond-icon diamond-3"></div>
-    <p class="question-text q-text-3">This is a question about how something works.</p>
+        <p
+            class="question-text"
+            style="top: calc({4585 + i * 74} * var(--h));"
+        >
+            {faq.question}
+        </p>
+
+        <p
+            class="question-text"
+            style="
+                top: calc({4620 + i * 74} * var(--h));
+                font-size: calc(28 * var(--h));
+                opacity: 0.8;
+            "
+        >
+            {faq.answer}
+        </p>
+    {/each}
+    <div class="divider-line" style="top: calc({4564 + faqs.length * 74} * var(--h));"></div>
+
 
     <div class="divider-line divider-4"></div>
 
@@ -137,14 +191,6 @@
             height: auto; 
         }
 
-        .hero-example-1 { left: calc(837 * var(--w)); top: calc(691 * var(--h)); }
-        .hero-example-2 { left: calc(714 * var(--w)); top: calc(119 * var(--h)); }
-        .hero-example-3 { left: calc(307 * var(--w)); top: calc(142 * var(--h)); }
-        .hero-example-4 { left: calc(1016 * var(--w)); top: calc(214 * var(--h)); }
-        .hero-example-5 { left: calc(93 * var(--w)); top: calc(368 * var(--h)); }
-        .hero-example-6 { left: calc(1042 * var(--w)); top: calc(462 * var(--h)); }
-        .hero-example-7 { left: calc(159 * var(--w)); top: calc(620 * var(--h)); }
-        .hero-example-8 { left: calc(528 * var(--w)); top: calc(711 * var(--h)); }
         .hero-example-main { width: calc(853 * var(--w)); height: calc(379 * var(--h)); left: calc(293 * var(--w)); top: calc(312 * var(--h)); }
 
         
@@ -165,10 +211,10 @@
             top: calc(1736 * var(--h)); 
         }
 
-        .dark-strip { width: calc(1440 * var(--w)); height: calc(71 * var(--h)); background: #1D1312; }
+        .dark-strip { width: calc(1430 * var(--w)); height: calc(71 * var(--h)); background: #1D1312; }
         .dark-strip-top { top: calc(1978 * var(--h)); }
-        .dark-strip-mid { left: calc(1440 * var(--w)); top: calc(3143 * var(--h)); }
-        .dark-strip-bottom { left: calc(1440 * var(--w)); top: calc(4965 * var(--h)); }
+        .dark-strip-mid { left: calc(1430 * var(--w)); top: calc(3143 * var(--h)); }
+        .dark-strip-bottom { left: calc(1420 * var(--w)); top: calc(4965 * var(--h)); }
 
         .dark-bg { width: calc(1440 * var(--w)); height: calc(1024 * var(--h)); background: #1D1312; top: calc(2048 * var(--h)); left: 0; }
         
@@ -226,8 +272,8 @@
         .gallery-img-2 { left: calc(725 * var(--w)); top: calc(3464 * var(--h)); }
         .gallery-img-3 { left: calc(417 * var(--w)); top: calc(3676 * var(--h)); }
 
-        .square-img-lg { width: calc(317 * var(--w)); height: calc(317 * var(--h)); left: calc(1052 * var(--w)); top: calc(3329 * var(--h)); }
-        .square-img-md { width: calc(290 * var(--w)); height: calc(290 * var(--h)); left: calc(119 * var(--w)); top: calc(3632 * var(--h)); }
+        .star-right { width: calc(317 * var(--w)); height: calc(317 * var(--h)); left: calc(1052 * var(--w)); top: calc(3329 * var(--h)); }
+        .star-left { width: calc(290 * var(--w)); height: calc(290 * var(--h)); left: calc(119 * var(--w)); top: calc(3632 * var(--h)); }
 
         .full-width-banner { width: calc(1440 * var(--w)); height: calc(288 * var(--h)); left: 0; top: calc(4064 * var(--h)); }
 
@@ -237,25 +283,13 @@
             width: calc(1168 * var(--w)); height: 0; left: calc(141 * var(--w));
             outline: calc(3 * var(--h)) #1D1312 solid; outline-offset: calc(-1.5 * var(--h));
         }
-        .divider-1 { top: calc(4564 * var(--h)); }
-        .divider-2 { top: calc(4638 * var(--h)); }
-        .divider-3 { top: calc(4712 * var(--h)); }
-        .divider-4 { top: calc(4786 * var(--h)); }
-
         .diamond-icon {
             width: calc(16 * var(--w)); height: calc(16 * var(--h)); border: calc(3 * var(--h)) #1D1312 solid;
             transform: rotate(45deg); transform-origin: top left;
         }
-        .diamond-1 { left: calc(168.31 * var(--w)); top: calc(4577 * var(--h)); }
-        .diamond-2 { left: calc(168.31 * var(--w)); top: calc(4651 * var(--h)); }
-        .diamond-3 { left: calc(168.31 * var(--w)); top: calc(4725 * var(--h)); }
-
         .question-text {
             width: calc(1100 * var(--w)); left: calc(209 * var(--w)); color: #1D1312; font-size: calc(35 * var(--h));
         }
-        .q-text-1 { top: calc(4585 * var(--h)); }
-        .q-text-2 { top: calc(4659 * var(--h)); }
-        .q-text-3 { top: calc(4733 * var(--h)); }
 
         .question-asset { width: calc(170 * var(--w)); height: calc(234 * var(--h)); left: calc(1174 * var(--w)); top: calc(4709 * var(--h)); }
 
