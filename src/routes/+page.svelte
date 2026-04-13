@@ -1,5 +1,10 @@
 <script lang="ts">
-    import type { SvelteComponent } from "svelte";
+    import type { PageProps } from './$types';
+    import { enhance } from '$app/forms';
+    let { form }: PageProps = $props();
+    let rsvpForm: HTMLFormElement | undefined = $state();
+    let submitting = $state(false) // for graying out the submit button immediately onenter/press
+
     import { onMount } from 'svelte';
     const heroImages = [
         { src: "https://placehold.co/1600x900", alt: "", x: 995, y: 780, z: -0.5 },
@@ -79,6 +84,27 @@
             />
         {/each}
         <img class="hero-logo" src="/images/logo.png" alt="" />
+        <section class="rsvp-container" class:submitted={form?.success}>
+            <img class="rsvp-layer" class:submitted={form?.success} src="/images/form-input.png" alt=""/>
+            <img class="rsvp-layer" class:submitted2={!form?.success} src="/images/form-input.png" alt=""/>
+            {#if form?.success}
+                <p class="form-message">Success! You have RSVPed for <b>Homunculus</b>. <br/>We'll be in touch soon.</p>
+            {:else}
+                <form class="rsvp-form" bind:this={rsvpForm} method="POST" use:enhance={() => { submitting = true; }} >
+                    <input type="email" name="email" placeholder="Enter your email address" required />
+                </form>
+                {#if form?.message}
+                    <p class="form-message error">{form.message}</p>
+                {/if}
+            {/if}
+            <img class="rsvp-layer rsvp-button" class:submitting={submitting} class:submitted={form?.success} src="/images/form-button.png" alt=""/>
+            <svg class="rsvp-svg" viewBox="0 0 1920 1080" xmlns="http://www.w3.org/2000/svg">
+                <!-- svelte-ignore a11y_click_events_have_key_events -->
+                <path d="M1126 972L1131 909.5L1238.5 915L1240.5 939L1258 972L1255 996L1186 1008.5L1131 1023.5L1126 972Z" class="hitbox" role="button" tabindex="0" aria-label="submit RSVP" onclick={() => {
+                    if (rsvpForm?.checkValidity()) {rsvpForm?.requestSubmit();} else {rsvpForm?.reportValidity();}
+                }} />
+            </svg>
+        </section>
     </div>
     <div class="info-wrapper">
         {#each confetti as confetto (confetto.id) }
@@ -258,6 +284,13 @@
         will-change: transform;
     }
 
+    .hero-example,
+    .hero-logo,
+    .info-background,
+    .confetti {
+        pointer-events: none;
+    }
+
     .hero-wrapper {
         width: 100vw;
         aspect-ratio: 16/9;
@@ -277,6 +310,7 @@
         object-fit: cover;
         height: auto; 
         position: absolute;
+        z-index: -1;
     }
 
     .hero-logo { 
@@ -631,6 +665,114 @@
         text-align: center; 
         color: var(--cream); 
         font-size: clamp(1.2rem, 2vw, 3.2rem);
+    }
+
+    .rsvp-container {
+        position: absolute !important;
+        transform: translateY(-20%) translateZ(0.1px) scale(0.95);
+        z-index: 200;
+        width: min(100vw, 177.78vh);
+        height: min(56.25vw, 100vh);
+        pointer-events: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .rsvp-layer {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+        pointer-events: none;
+        transition: transform 0.3s ease, filter 0.3s ease;
+    }
+
+    .rsvp-layer.submitted {
+        transform: translateY(-10rem);
+        opacity: 0;
+        pointer-events: none;
+        transition: transform 0.6s ease, opacity 0.6s ease;
+    }
+
+    .rsvp-layer.submitted2 {
+        transform: translateY(12rem);
+        opacity: 0;
+        pointer-events: none;
+        transition: transform 1s ease, opacity 1s ease;
+    }
+
+    .rsvp-layer:hovered {
+        transform: translate(-5px, -5px);
+        filter: brightness(1.3) drop-shadow(5px 5px 0 rgba(0, 0, 0, 0.3));
+    }
+
+    .rsvp-svg {
+        z-index: 200;
+        pointer-events: none;
+    }
+
+    .hitbox {
+        pointer-events: auto !important;
+        cursor: pointer;
+        fill: white;
+        opacity: 0;
+    }
+
+    .rsvp-form {
+        position: absolute;
+        width: calc(400/1920*100%);
+        height: calc(100/1080*100%);
+        left: calc(725/1920*100%);
+        top: calc(915/1080*100%);
+        z-index: 100;
+    }
+
+    .rsvp-form input {
+        width: 100%;
+        height: 100%;
+        background: transparent;
+        border: none;
+        font-family: 'Atkinson Hyperlegible Mono', monospace;
+        font-size: 1.5vw;
+        font-style: italic;
+    }
+
+    .rsvp-button {
+        position: absolute;
+        pointer-events: auto;
+        cursor: pointer;
+    }
+    
+    .rsvp-container:not(.submitted):has(.hitbox:hover) .rsvp-button {
+        filter: brightness(0.9);
+    }
+
+    .rsvp-container:not(.submitted):has(.hitbox:active) .rsvp-button {
+        filter: brightness(0.7);
+    }
+
+    .rsvp-button.submitting {
+        filter: grayscale(0.5);
+        pointer-events: none;
+    }
+
+    .form-message {
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%, 25%);
+        top: calc(915/1080*100%);
+        z-index: 10;
+        text-align: center;
+        font-size: 1.5vw !important;
+        color: color-mix(in srgb, var(--dark), transparent 30%);
+        font-style: italic;
+    }
+    
+    .form-message.error {
+        bottom: calc(915/1080*100%) !important;
     }
 
     @media (max-width: 600px) {
