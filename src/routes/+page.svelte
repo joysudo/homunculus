@@ -7,14 +7,14 @@
 
     import { onMount } from 'svelte';
     const heroImages = [
-        { src: "https://placeholder.cat/cat?w=1600&h=900&format=webp", alt: "", x: 995, y: 780, z: -0.5 },
-        { src: "https://placeholder.cat/cat?w=1600&format=webp", alt: "", x: 850, y: 210, z: -0.4 },
-        { src: "https://placeholder.cat/cat?w=1500&format=webp", alt: "", x: 465, y: 230, z: -0.7 },
-        { src: "https://placeholder.cat/cat?w=1400&format=webp", alt: "", x: 1175, y: 305, z: -0.3 },
-        { src: "https://placeholder.cat/cat?w=1300&format=webp", alt: "", x: 255, y: 460, z: -0.5 },
-        { src: "https://placeholder.cat/cat?w=1200&format=webp", alt: "", x: 1200, y: 550, z: -0.6 },
-        { src: "https://placeholder.cat/cat?w=1100&format=webp", alt: "", x: 320, y: 710, z: -0.5 },
-        { src: "https://placeholder.cat/cat?w=1000&format=webp", alt: "", x: 660, y: 800, z: -0.3 }
+        { src: "https://picsum.photos/1600/900", alt: "", x: 995, y: 780, z: -0.5 },
+        { src: "https://picsum.photos/1600/901", alt: "", x: 850, y: 210, z: -0.4 },
+        { src: "https://picsum.photos/1600/902", alt: "", x: 465, y: 230, z: -0.7 },
+        { src: "https://picsum.photos/1600/903", alt: "", x: 1175, y: 305, z: -0.3 },
+        { src: "https://picsum.photos/1600/904", alt: "", x: 255, y: 460, z: -0.5 },
+        { src: "https://picsum.photos/1600/905", alt: "", x: 1200, y: 550, z: -0.6 },
+        { src: "https://picsum.photos/1600/906", alt: "", x: 320, y: 710, z: -0.5 },
+        { src: "https://picsum.photos/1600/907", alt: "", x: 660, y: 800, z: -0.3 }
     ];
 
     const faqs = [
@@ -95,7 +95,7 @@
                 <p class="form-message">Success! You have RSVPed for <b>Homunculus</b>. <br/>We'll be in touch soon.</p>
             {:else}
                 <form class="rsvp-form" bind:this={rsvpForm} method="POST" use:enhance={() => { submitting = true; }} >
-                    <input type="email" name="email" placeholder="Enter your email address" required />
+                    <input type="email" name="email" placeholder="Enter your email" required />
                 </form>
                 {#if form?.message}
                     <p class="form-message error">{form.message}</p>
@@ -152,24 +152,24 @@
             </svg>
             <h2 class="qualify-title">DO I QUALIFY?</h2>
             <h3>As a student</h3>
-            <p style="margin: 0;">If you're a teenager (13-18) anywhere in the world, you qualify for Homunculus.</p>
+            <p>If you're a teenager (13-18) anywhere in the world, you qualify for Homunculus.</p>
             <ul style="margin: 0;">
                 <li><p style="margin: 0;">Verify your identity through <a href="https://auth.hackclub.com/">Hack Club Auth</a>. This helps us prove that you're a teenager!</p></li>
                 <li><p style="margin: 0;">Create an endless game using P5.js or Pygame with a <b>limited moveset</b></p></li>
             </ul>
-            <p style="margin: 0;">Projects with 8+ hours of work will qualify you for submission to the Homunculus certification. Projects with 14+ hours of work will earn you a device to play endless games on.</p>
+            <p>Projects with 8+ hours of work will qualify you for submission to the Homunculus certification. Projects with 14+ hours of work will earn you a device to play endless games on.</p>
             <button class="btn-container btn-light">Submit completed →</button>
             <button class="btn-container btn-med">Get help →</button>
         </div>
         <div class="teacher-box">
             <h3>As a teacher</h3>
-            <p style="margin: 0;">Homunculus is designed to fit directly into classrooms. Get your students to complete Homunculus, and we'll ship you donuts, swag, and more!</p>
+            <p>Homunculus is designed to fit directly into classrooms. Get your students to complete Homunculus, and we'll ship you donuts, swag, and more!</p>
             <ul style="margin: 0;">
                 <li><p style="margin: 0;">The Homunculus curriculum is available as a unit you can integrate into your class</p></li>
                 <li><p style="margin: 0;">You’ll get access to a free platform with lesson plans, slides, demos, and tracking tools</p></li>
             </ul>
-            <p style="margin: 0;">You can be eligible for Homunculus materials in two ways:</p>
-            <ul style="margin: 0;">
+            <p>You can be eligible for Homunculus materials in two ways:</p>
+            <ul>
                 <li><p style="margin: 0;">Be part of a qualifying <b>partner school/district</b></p></li>
                 <li><p style="margin: 0;">Fill out the <b>form below</b> and wait for a response</p></li>
             </ul>
@@ -436,8 +436,9 @@
 
     .qualify-wrapper { 
         width: 100vw; 
+        /* min-height: var(--base-h);  */
+        padding: 2vw 0;
         height: auto !important;
-        min-height: var(--base-h); 
         background: var(--dark); 
         display: flex;
         align-items: center;
@@ -445,16 +446,25 @@
         flex-grow: 1;
     }
 
-    .qualify-title {font-size: clamp(2.5rem, 8vw, calc(125 * 100vw / 16 * 9 / 1024)); } 
+    .qualify-title {
+        /* font-size: clamp(2.0rem, 6vw, 5.2rem);  */
+        font-size: clamp(1.8rem, 4vw, 3.9rem);
+    } 
+
+    .qualify-wrapper p {
+        font-size: clamp(1.25rem, 1.5vw, 2.25rem);
+    }
 
     .student-box {
         position: relative;
         display: flex;
         flex-direction: column;
+        flex: 1;
         justify-content: center;
         background-color: var(--cream);
         color: var(--dark);
-        min-height: 70%;
+        min-height: 80%;
+        height: fit-content;
         padding-left: 5vw;
         padding-right: 1vw;
         background: color-mix(in srgb, var(--cream), var(--dark) 45%);
@@ -510,6 +520,7 @@
     .teacher-box {
         color: var(--cream); 
         padding: 0 5vw;
+        flex: 1;
         flex-grow: 1;
         height: auto;
     }
@@ -837,6 +848,10 @@
         }
         .qualify-wrapper {
             flex-direction: column;
+        }
+        .student-box, .teacher-box {
+            height: auto;
+            min-height: 0;
         }
         .student-box {
             background-color: transparent;
