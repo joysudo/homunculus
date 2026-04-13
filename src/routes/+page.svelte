@@ -46,7 +46,7 @@
                 "
             />
         {/each}
-        <img class="hero-logo" src="https://placehold.co/853x379" alt="" />
+        <img class="hero-logo" src="/images/logo.png" alt="" />
     </div>
     <div class="info-wrapper">
         <div></div>
@@ -55,7 +55,7 @@
             <p class="info-body">this is filler text this is filler text i will write this after i fill in the other thing. you ship thing. this is filler text this is filler text i will write this after i fill in the other.</p>
         </div>
         <div class="info-visual">
-            <img class="info-homunculus" src="https://placehold.co/209x312" alt="" />
+            <img class="info-homunculus" src="/images/homunculus-leaf.png" alt="" />
             <svg class="info-ground" viewBox="0 0 1440 71" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style="width: 100%; height: auto;">
                 <path d="M1108.19 0L1440 45.71L1438.12 71H0V0L144.699 45.71L480.499 18.88L831.268 45.71L1108.19 0Z" fill="var(--dark)"/>
             </svg>
@@ -88,8 +88,8 @@
         <svg class="info-ground" viewBox="0 0 1440 71" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style="width: 100%; height: auto; transform: rotate(180deg);">
             <path d="M1108.19 0L1440 45.71L1438.12 71H0V0L144.699 45.71L480.499 18.88L831.268 45.71L1108.19 0Z" fill="var(--dark)"/>
         </svg>
-        <img class="star star-right" src="https://placehold.co/317x317" alt="" />
-        <img class="star star-left" src="https://placehold.co/290x290" alt="" />
+        <img class="star star-right" src="/images/star-right.png" alt="" />
+        <img class="star star-left" src="/images/star-left.png" alt="" />
         <div class="guide-content">
             <h2 class="guide-title">DON’T KNOW WHERE <br/>TO START?</h2>
             <div class="gallery-container">
@@ -105,7 +105,7 @@
         </div>
     </div>
     <div class="questions-wrapper">
-        <img class="questions-decor" src="https://placehold.co/1440x288" alt="" />
+        <img class="questions-decor" src="/images/divider.png" alt="" />
         <div class="questions-content">
             <h2 class="questions-title">QUESTIONS</h2>    
             {#each faqs as faq, i}
@@ -124,7 +124,7 @@
             <svg class="info-ground" viewBox="0 0 1440 71" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style="width: 100%; height: auto; transform: translateY(5px);">
                 <path d="M1108.19 0L1440 45.71L1438.12 71H0V0L144.699 45.71L480.499 18.88L831.268 45.71L1108.19 0Z" fill="var(--dark)"/>
             </svg>
-            <img class="question-asset" src="https://placehold.co/170x234" alt="" />
+            <img class="question-asset" src="/images/homunculus-wizard.png" alt="" />
             <footer>
                 <h2 class="footer-title">MADE BY JOY SU</h2>
                 <p class="footer-sub">for <a href="https://hackclub.org">Hack Club</a></p>
@@ -199,7 +199,7 @@
     }
 
     .hero-wrapper {
-        width: var(--base-w);
+        width: 100vw;
         min-height: calc(100vw * 9 / 16) !important;
         position: static;
         display: flex;
@@ -220,10 +220,11 @@
     .hero-logo { 
         width: 50vw;
         height: auto;
+        z-index: 9;
     }
 
     .info-wrapper {
-        width: var(--base-w);
+        width: 100vw;
         min-height: var(--base-h);
         position: static;
         display: flex;
