@@ -43,9 +43,9 @@
     }
     let confetti = $state<Confetto[]>([]);
     const confettiTypes = [
-        /* yellow */ {color: '#EECF52', shape: "path('M5,0.5 Q5.8,3.5 8.5,3.5 Q6.5,5 7.5,8 Q5,6.5 2.5,8 Q3.5,5 1.5,3.5 Q4.2,3.5 5,0.5 Z')"},
-        /* green */ {color: '#53882A', shape: "path('M1,1 C6,1 9,4 9,9 C4,9 1,6 1,1 Z')"}, 
-        /* purple */ {color: '#54325A', shape: "path('M5,1.5 Q6,1.5 8.5,6 Q9.5,8 7.5,8 L2.5,8 Q0.5,8 1.5,6 Q4,1.5 5,1.5 Z')"}
+        /* yellow star */ {color: '#EECF52', shape: "path('M5,0.5 Q5.8,3.5 8.5,3.5 Q6.5,5 7.5,8 Q5,6.5 2.5,8 Q3.5,5 1.5,3.5 Q4.2,3.5 5,0.5 Z')"},
+        /* green leaf */ {color: '#53882A', shape: "path('M1,1 C6,1 9,4 9,9 C4,9 1,6 1,1 Z')"}, 
+        /* purple cool wizard hat*/ {color: '#54325A', shape: "path('M5,1.5 Q6,1.5 8.5,6 Q9.5,8 7.5,8 L2.5,8 Q0.5,8 1.5,6 Q4,1.5 5,1.5 Z')"}
     ]
     onMount(() => {
         confetti = Array.from({ length: 30 }).map((_, i) => {
@@ -436,32 +436,42 @@
     }
 
     .btn-container {
-        padding: 0.5rem;
+        position: relative;
+        padding: 0.5rem 1rem;
         margin-right: 5vw;
         display: flex;
         align-items: center;
         box-sizing: border-box;
+        border: none;
         font-weight: 700; 
         font-family: 'Atkinson Hyperlegible Mono', monospace;
         margin-bottom: 0.5rem;
         font-size: clamp(1.25rem, 2vw, 3rem);
-        transition: transform 0.1s ease, box-shadow 0.1s ease, filter 0.05s ease;
+        transition: transform 0.1s ease, box-shadow 0.1s ease, filter 0.1s ease;
+        --cut: 15px;
+        clip-path: polygon(
+            var(--cut) 0, calc(100% - var(--cut)) 0, 
+            100% var(--cut), 100% calc(100% - var(--cut)), 
+            calc(100% - var(--cut)) 100%, var(--cut) 100%, 
+            0 calc(100% - var(--cut)), 0 var(--cut)
+        );
     }
 
     .btn-container:hover {
         transform: translate(-2px, -2px);
         box-shadow: 2px 2px 0 color-mix(in srgb, var(--cream), var(--dark) 50%);
     }
-
     .btn-container:active{
         transform: translate(0, 0);
         box-shadow: none;
         filter: brightness(0.9);
     }
 
-    .btn-light { border-color: var(--dark); background: var(--cream); color: var(--dark); }
-    .btn-med { border-color: var(--dark); background: color-mix(in srgb, var(--cream), var(--dark) 10%); color: var(--dark);}
-    .btn-dark { border-color: var(--cream); background: color-mix(in srgb, var(--cream), var(--dark) 90%); color: var(--cream); }
+    .btn-light, .btn-med { background: var(--dark);  color: var(--dark); }
+    .btn-light::after { position: absolute; content: ""; background: var(--cream); inset: 3px; clip-path: inherit; z-index: -1; }
+    .btn-med::after { position: absolute; content: ""; background: color-mix(in srgb, var(--cream), var(--dark) 10%); inset: 3px; clip-path: inherit; z-index: -1; }
+    .btn-dark { background: var(--cream); color: var(--cream); }
+    .btn-dark::after { position: absolute; content: ""; background: color-mix(in srgb, var(--cream), var(--dark) 90%); inset: 3px; clip-path: inherit; z-index: -1; }
 
     .guide-wrapper {
         width: var(--base-w);
