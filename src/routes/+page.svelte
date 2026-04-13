@@ -1,13 +1,13 @@
 <script lang="ts">
     const heroImages = [
-        { src: "https://placehold.co/1600x900", alt: "", x: 995, y: 780 },
-        { src: "https://placehold.co/1600x900", alt: "", x: 850, y: 210 },
-        { src: "https://placehold.co/1600x900", alt: "", x: 465, y: 230 },
-        { src: "https://placehold.co/1600x900", alt: "", x: 1175, y: 305 },
-        { src: "https://placehold.co/1600x900", alt: "", x: 255, y: 460 },
-        { src: "https://placehold.co/1600x900", alt: "", x: 1200, y: 550 },
-        { src: "https://placehold.co/1600x900", alt: "", x: 320, y: 710 },
-        { src: "https://placehold.co/1600x900", alt: "", x: 660, y: 800 }
+        { src: "https://placehold.co/1600x900", alt: "", x: 995, y: 780, z: -0.5 },
+        { src: "https://placehold.co/1600x900", alt: "", x: 850, y: 210, z: -0.4 },
+        { src: "https://placehold.co/1600x900", alt: "", x: 465, y: 230, z: -0.7 },
+        { src: "https://placehold.co/1600x900", alt: "", x: 1175, y: 305, z: -0.3 },
+        { src: "https://placehold.co/1600x900", alt: "", x: 255, y: 460, z: -0.6 },
+        { src: "https://placehold.co/1600x900", alt: "", x: 1200, y: 550, z: -0.7 },
+        { src: "https://placehold.co/1600x900", alt: "", x: 320, y: 710, z: -0.4 },
+        { src: "https://placehold.co/1600x900", alt: "", x: 660, y: 800, z: -0.2 }
     ];
 
     const faqs = [
@@ -42,7 +42,7 @@
                 style="
                     left: calc({img.x} * calc(100vw / 1440));
                     top: calc({img.y * 1.4} * calc(100vw * 9 / 16 / 1440));
-                    transform: translate(-50%, -50%);
+                    transform: translate(-50%, -50%) translateZ({img.z}px) scale({1 - img.z / 2});
                 "
             />
         {/each}
@@ -152,16 +152,22 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
+        /* height: calc(5 * 100vw / 16 * 9); */
+        height: 100vh;
+        overflow: hidden;
     }
 
     .main-container {
         width: 100vw;
-        height: calc(5*var(--base-h));
+        height: 100vh;
+        /* height: calc(5 * 100vw / 16 * 9); */
         position: relative;
         background: var(--cream);
         display: flex;
         flex-direction: column;
         flex-shrink: 0;
+        overflow-y: auto;
+        overflow-x: hidden;
     }
 
     .main-container > * {
@@ -198,19 +204,25 @@
         color: chocolate;
     }
 
+    .main-container {
+        perspective: 2px;
+    }
+
     .hero-wrapper {
         width: 100vw;
-        min-height: calc(100vw * 9 / 16) !important;
-        position: static;
+        aspect-ratio: 16/9;
+        height: calc(100vw * 9 / 16) !important;
+        position: relative;
         display: flex;
         justify-content: center;
         align-items: center;
         left: 0;
         top: 0;
+        transform-style: preserve-3d;
     }
 
     .hero-example {
-        width: calc(325 * var(--w));
+        width: 25vw;
         aspect-ratio: 16 / 9;
         object-fit: cover;
         height: auto; 
@@ -221,11 +233,12 @@
         width: 50vw;
         height: auto;
         z-index: 9;
+        transform: translateZ(0px);
     }
 
     .info-wrapper {
         width: 100vw;
-        min-height: var(--base-h);
+        min-height: var(--base-h) !important;
         position: static;
         display: flex;
         flex-direction: column;
@@ -280,7 +293,7 @@
 
     .qualify-wrapper { 
         width: 100vw; 
-        min-height: var(--base-h); 
+        min-height: var(--base-h) !important; 
         background: var(--dark); 
         display: flex;
         align-items: center;
@@ -355,7 +368,7 @@
 
     .guide-wrapper {
         width: var(--base-w);
-        min-height: var(--base-h);
+        min-height: var(--base-h) !important;
         position: relative;
         display: flex;
         flex-direction: column;
@@ -426,7 +439,7 @@
 
     .questions-wrapper {
         width: var(--base-w);
-        min-height: var(--base-h);
+        min-height: var(--base-h) !important;
         position: relative;
         display: flex;
         flex-direction: column;
