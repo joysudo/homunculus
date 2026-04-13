@@ -4,10 +4,10 @@
         { src: "https://placehold.co/1600x900", alt: "", x: 850, y: 210, z: -0.4 },
         { src: "https://placehold.co/1600x900", alt: "", x: 465, y: 230, z: -0.7 },
         { src: "https://placehold.co/1600x900", alt: "", x: 1175, y: 305, z: -0.3 },
-        { src: "https://placehold.co/1600x900", alt: "", x: 255, y: 460, z: -0.6 },
-        { src: "https://placehold.co/1600x900", alt: "", x: 1200, y: 550, z: -0.7 },
-        { src: "https://placehold.co/1600x900", alt: "", x: 320, y: 710, z: -0.4 },
-        { src: "https://placehold.co/1600x900", alt: "", x: 660, y: 800, z: -0.2 }
+        { src: "https://placehold.co/1600x900", alt: "", x: 255, y: 460, z: -0.5 },
+        { src: "https://placehold.co/1600x900", alt: "", x: 1200, y: 550, z: -0.6 },
+        { src: "https://placehold.co/1600x900", alt: "", x: 320, y: 710, z: -0.5 },
+        { src: "https://placehold.co/1600x900", alt: "", x: 660, y: 800, z: -0.3 }
     ];
 
     const faqs = [
@@ -60,6 +60,9 @@
                 <path d="M1108.19 0L1440 45.71L1438.12 71H0V0L144.699 45.71L480.499 18.88L831.268 45.71L1108.19 0Z" fill="var(--dark)"/>
             </svg>
         </div>
+        <svg class="info-ground" viewBox="0 0 1440 320" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" fill="var(--dark)" opacity="50%" style="width: 100%; height: auto; position: absolute; bottom: 0; z-index: -1; transform: translateZ(-0.5px) scale(1.5)">
+            <path d="M0 320H1440V0L1168 109.5L849.5 42L533 131.5L115 0L0 73.5V320Z" fill="color-mix(in srgb, var(--cream), var(--dark) 50%)"/>
+        </svg>
     </div>
     <div class="qualify-wrapper">
         <div class="student-box">
@@ -239,11 +242,12 @@
     .info-wrapper {
         width: 100vw;
         min-height: var(--base-h) !important;
-        position: static;
+        position: relative;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: space-between;
+        transform-style: preserve-3d;
     }
 
     .info-wrapper > * {
@@ -360,6 +364,18 @@
         font-family: 'Atkinson Hyperlegible Mono', monospace;
         margin-bottom: 0.5rem;
         font-size: clamp(1.25rem, 2vw, 3rem);
+        transition: transform 0.1s ease, box-shadow 0.1s ease, filter 0.05s ease;
+    }
+
+    .btn-container:hover {
+        transform: translate(-2px, -2px);
+        box-shadow: 2px 2px 0 color-mix(in srgb, var(--cream), var(--dark) 50%);
+    }
+
+    .btn-container:active{
+        transform: translate(0, 0);
+        box-shadow: none;
+        filter: brightness(0.9);
     }
 
     .btn-light { border-color: var(--dark); background: var(--cream); color: var(--dark); }
