@@ -60,7 +60,7 @@
                 <path d="M1108.19 0L1440 45.71L1438.12 71H0V0L144.699 45.71L480.499 18.88L831.268 45.71L1108.19 0Z" fill="var(--dark)"/>
             </svg>
         </div>
-        <svg class="info-ground" viewBox="0 0 1440 320" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" fill="var(--dark)" opacity="50%" style="width: 100%; height: auto; position: absolute; bottom: 0; z-index: -1; transform: translateZ(-0.5px) scale(1.5)">
+        <svg class="info-ground info-background" viewBox="0 0 1440 320" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" fill="var(--dark)" opacity="50%">
             <path d="M0 320H1440V0L1168 109.5L849.5 42L533 131.5L115 0L0 73.5V320Z" fill="color-mix(in srgb, var(--cream), var(--dark) 50%)"/>
         </svg>
     </div>
@@ -169,6 +169,8 @@
         display: flex;
         flex-direction: column;
         flex-shrink: 0;
+        perspective: 2px;
+        perspective-origin: center;
         overflow-y: auto;
         overflow-x: hidden;
     }
@@ -205,10 +207,6 @@
 
     a {
         color: chocolate;
-    }
-
-    .main-container {
-        perspective: 2px;
     }
 
     .hero-wrapper {
@@ -293,6 +291,15 @@
         width: 100%;
         height: auto;
         margin-bottom: -5px;
+    }
+
+    .info-background {
+        width: 100%; 
+        height: auto; 
+        position: absolute; 
+        bottom: 0; 
+        z-index: -1; 
+        transform: translateZ(-0.5px) scale(1.5);
     }
 
     .qualify-wrapper { 
@@ -402,6 +409,7 @@
     .guide-content {
         margin-top: 10vw;
     }
+
     .star {
         position: absolute;
         width: 15vw; 
@@ -449,8 +457,9 @@
         border: 3px var(--dark) solid;
     }
 
-    .gallery-container button {
+    .guide-wrapper button {
         width: fit-content;
+        padding: 1.25vw;
     }
 
     .questions-wrapper {
@@ -547,6 +556,12 @@
         :global(html) {
             font-size: 62.5%;
             /* also looks p good at 75% */
+        }
+        .main-container {
+            perspective-origin: top center;
+        }
+        .info-background {
+            transform: translateZ(-0.5px) scale(1.5) translateY(50%);
         }
         .qualify-wrapper {
             flex-direction: column;
