@@ -270,7 +270,7 @@
     }
 
     @font-face {
-        font-family: 'Peich', sans-serif;
+        font-family: 'Peich';
         src: url('/fonts/Peich-Regular.otf') format('opentype');
     }
 
