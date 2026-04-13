@@ -1,4 +1,6 @@
 <script lang="ts">
+    import type { SvelteComponent } from "svelte";
+    import { onMount } from 'svelte';
     const heroImages = [
         { src: "https://placehold.co/1600x900", alt: "", x: 995, y: 780, z: -0.5 },
         { src: "https://placehold.co/1600x900", alt: "", x: 850, y: 210, z: -0.4 },
@@ -29,6 +31,36 @@
     function toggle(i: number) {
         if (faqIndex === i) faqIndex = null; else faqIndex = i;
     }
+
+    interface Confetto {
+        id: number;
+        left: string;
+        color: string;
+        delay: string;
+        duration: string;
+        path: string;
+        scale: string;
+    }
+    let confetti = $state<Confetto[]>([]);
+    const confettiTypes = [
+        /* yellow */ {color: '#EECF52', shape: "path('M5,0.5 Q5.8,3.5 8.5,3.5 Q6.5,5 7.5,8 Q5,6.5 2.5,8 Q3.5,5 1.5,3.5 Q4.2,3.5 5,0.5 Z')"},
+        /* green */ {color: '#53882A', shape: "path('M1,1 C6,1 9,4 9,9 C4,9 1,6 1,1 Z')"}, 
+        /* purple */ {color: '#54325A', shape: "path('M5,1.5 Q6,1.5 8.5,6 Q9.5,8 7.5,8 L2.5,8 Q0.5,8 1.5,6 Q4,1.5 5,1.5 Z')"}
+    ]
+    onMount(() => {
+        confetti = Array.from({ length: 30 }).map((_, i) => {
+            const confettiType = confettiTypes[Math.floor(Math.random() * confettiTypes.length)];
+            return {
+                id: i,
+                left: `${Math.random() * 100}vw`,
+                color: confettiType.color,
+                delay: `${Math.random() * 5}s`,
+                duration: `${Math.random() * 3 + 4}s`,
+                path: confettiType.shape,
+                scale: `${Math.random() * 0.5 + 0.5}px`
+            };
+        });
+    });
 </script>
 
 <div class="main-container">
@@ -49,6 +81,19 @@
         <img class="hero-logo" src="/images/logo.png" alt="" />
     </div>
     <div class="info-wrapper">
+        {#each confetti as confetto (confetto.id) }
+            <div 
+                class="confetti"
+                style:left={confetto.left}
+                style:background-color={confetto.color}
+                style:animation-delay={confetto.delay}
+                style:animation-duration={confetto.duration}
+                style:width="10px"
+                style:height="10px"
+                style:transform="scale({confetto.scale})"
+                style:clip-path={confetto.path}
+            ></div>
+        {/each}
         <div></div>
         <div>
             <h2 class="info-title">WHAT IS HOMUNCULUS?</h2>
@@ -209,6 +254,10 @@
         color: chocolate;
     }
 
+    .hero-example, .confetti, .info-background {
+        will-change: transform;
+    }
+
     .hero-wrapper {
         width: 100vw;
         aspect-ratio: 16/9;
@@ -261,12 +310,16 @@
         line-height: 0.5; 
         margin: 0;
         padding-top: var(--base-h)*0.5 !important;
+        filter: drop-shadow(0 0 3px var(--cream));
+        z-index: 40;
     }
 
     .info-body {
         text-align: center; 
         color: var(--dark); 
         margin: 1rem 20vw;
+        filter: drop-shadow(0 0 3px var(--cream)) drop-shadow(0 0 4px var(--cream)) drop-shadow(0 0 6px var(--cream));
+        z-index: 40;
     }    
 
     .info-visual {
@@ -300,6 +353,27 @@
         bottom: 0; 
         z-index: -1; 
         transform: translateZ(-0.5px) scale(1.5);
+    }
+
+    .confetti {
+        position: absolute;
+        top: -20px;
+        border-radius: 5px;
+        opacity: 0;
+        animation: fall linear infinite;
+    }
+
+    @keyframes fall {
+        0% {
+            opacity: 0;
+        }
+        20% {
+            opacity: 0.7;
+        }
+        100% {
+            opacity: 1;
+            transform: translateY(calc(100vw * 9 / 16)) rotate(720deg);
+        }
     }
 
     .qualify-wrapper { 
