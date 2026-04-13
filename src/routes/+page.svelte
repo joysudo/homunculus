@@ -7,28 +7,32 @@
 
     import { onMount } from 'svelte';
     const heroImages = [
-        { src: "https://placehold.co/1600x900", alt: "", x: 995, y: 780, z: -0.5 },
-        { src: "https://placehold.co/1600x900", alt: "", x: 850, y: 210, z: -0.4 },
-        { src: "https://placehold.co/1600x900", alt: "", x: 465, y: 230, z: -0.7 },
-        { src: "https://placehold.co/1600x900", alt: "", x: 1175, y: 305, z: -0.3 },
-        { src: "https://placehold.co/1600x900", alt: "", x: 255, y: 460, z: -0.5 },
-        { src: "https://placehold.co/1600x900", alt: "", x: 1200, y: 550, z: -0.6 },
-        { src: "https://placehold.co/1600x900", alt: "", x: 320, y: 710, z: -0.5 },
-        { src: "https://placehold.co/1600x900", alt: "", x: 660, y: 800, z: -0.3 }
+        { src: "https://placeholder.cat/cat?w=1600&h=900&format=webp", alt: "", x: 995, y: 780, z: -0.5 },
+        { src: "https://placeholder.cat/cat?w=1600&format=webp", alt: "", x: 850, y: 210, z: -0.4 },
+        { src: "https://placeholder.cat/cat?w=1500&format=webp", alt: "", x: 465, y: 230, z: -0.7 },
+        { src: "https://placeholder.cat/cat?w=1400&format=webp", alt: "", x: 1175, y: 305, z: -0.3 },
+        { src: "https://placeholder.cat/cat?w=1300&format=webp", alt: "", x: 255, y: 460, z: -0.5 },
+        { src: "https://placeholder.cat/cat?w=1200&format=webp", alt: "", x: 1200, y: 550, z: -0.6 },
+        { src: "https://placeholder.cat/cat?w=1100&format=webp", alt: "", x: 320, y: 710, z: -0.5 },
+        { src: "https://placeholder.cat/cat?w=1000&format=webp", alt: "", x: 660, y: 800, z: -0.3 }
     ];
 
     const faqs = [
         {
-            question: "This is a question about how something works.",
-            answer: "This is the answer explaining how it works."
+            question: "What kind of projects can I make?",
+            answer: "You can build any endless game with a limited moveset. That means the player is restricted to only a few actions (ex: jumping or running, or moving left or right). Pong, Breakout, Dino Runner, and Space Invaders are all great examples!"
         },
         {
-            question: "This is a question about how something works.",
-            answer: "Another explanation goes here."
+            question: "How do teachers use this in class?",
+            answer: "Teachers can run Homunculus as a 2-week unit, complete with structured lessons, activities, and project milestones."
         },
         {
-            question: "This is a question about how something works.",
-            answer: "More details about the process."
+            question: "Is this aligned with school standards?",
+            answer: "Yes. Homunculus is designed to support emerging AI literacy and computer science standards being adopted across states."
+        },
+        {
+            question: "Do I need special software?",
+            answer: "No. projects are built using accessible tools like Pygame or p5.js, which are free and widely used."
         }
     ];
 
@@ -123,7 +127,7 @@
         <div></div>
         <div>
             <h2 class="info-title">WHAT IS HOMUNCULUS?</h2>
-            <p class="info-body">this is filler text this is filler text i will write this after i fill in the other thing. you ship thing. this is filler text this is filler text i will write this after i fill in the other.</p>
+            <p class="info-body">Build an endless game, train an AI to play it, and get a device to play endless games. Along the way, earn a certificate recognized by technical giants.<br/>For teens 13-18 around the world. Homunculus is an initiative by <a href="https://hackclub.org">Hack Club</a>, a charity aimed at getting teens to code.</p>
         </div>
         <div class="info-visual">
             <img class="info-homunculus" src="/images/homunculus-leaf.png" alt="" />
@@ -148,13 +152,27 @@
             </svg>
             <h2 class="qualify-title">DO I QUALIFY?</h2>
             <h3>As a student</h3>
-            <p>as a student, you need to blah blah blah blah blah and blah blah blah blah blah. honk shoo girl thats a golem thing thing thing sahur</p>
+            <p style="margin: 0;">If you're a teenager (13-18) anywhere in the world, you qualify for Homunculus.</p>
+            <ul style="margin: 0;">
+                <li><p style="margin: 0;">Verify your identity through <a href="https://auth.hackclub.com/">Hack Club Auth</a>. This helps us prove that you're a teenager!</p></li>
+                <li><p style="margin: 0;">Create an endless game using P5.js or Pygame with a <b>limited moveset</b></p></li>
+            </ul>
+            <p style="margin: 0;">Projects with 8+ hours of work will qualify you for submission to the Homunculus certification. Projects with 14+ hours of work will earn you a device to play endless games on.</p>
             <button class="btn-container btn-light">Submit completed →</button>
             <button class="btn-container btn-med">Get help →</button>
         </div>
         <div class="teacher-box">
             <h3>As a teacher</h3>
-            <p>As a teacher, Homonculus is available as a unit, inc. After completing the unit, we’ll ship prizes directly to you to distribute.<br/>You can be eligible by meeting either of the:<br/>be part of a qualifying school district<br/>register with form</p>
+            <p style="margin: 0;">Homunculus is designed to fit directly into classrooms. Get your students to complete Homunculus, and we'll ship you donuts, swag, and more!</p>
+            <ul style="margin: 0;">
+                <li><p style="margin: 0;">The Homunculus curriculum is available as a unit you can integrate into your class</p></li>
+                <li><p style="margin: 0;">You’ll get access to a free platform with lesson plans, slides, demos, and tracking tools</p></li>
+            </ul>
+            <p style="margin: 0;">You can be eligible for Homunculus materials in two ways:</p>
+            <ul style="margin: 0;">
+                <li><p style="margin: 0;">Be part of a qualifying <b>partner school/district</b></p></li>
+                <li><p style="margin: 0;">Fill out the <b>form below</b> and wait for a response</p></li>
+            </ul>
             <button class="btn-container btn-dark">Submit form →</button>
         </div>
     </div>
@@ -165,14 +183,14 @@
         <img class="star star-right" src="/images/star-right.png" alt="" />
         <img class="star star-left" src="/images/star-left.png" alt="" />
         <div class="guide-content">
-            <h2 class="guide-title">DON’T KNOW WHERE <br/>TO START?</h2>
+            <h2 class="guide-title">SEE THE GUIDE<br/>+ PRIZES</h2>
             <div class="gallery-container">
                 <div>
-                    <img src="https://placehold.co/1600x900" alt="" />
-                    <img src="https://placehold.co/1600x900" alt="" />
+                    <img src="/images/prizes(1).png" alt="" />
+                    <img src="/images/Untitled drawing(4).png" alt="" />
                 </div>
                 <div>
-                    <img src="https://placehold.co/1600x900" alt="" />
+                    <img src="/images/prizes.png" alt="" />
                     <button class="btn-container btn-med">Read our<br/>guides →</button>
                 </div>
             </div>
@@ -209,6 +227,7 @@
 
 
 <style>
+    @import url('https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Mono:ital,wght@0,200..800;1,200..800&display=swap');
     :root { 
         --base-w: 100vw;
         --base-h: calc(100vw * 9 / 16);
@@ -248,6 +267,11 @@
 
     .main-container > * {
         margin: 0;
+    }
+
+    @font-face {
+        font-family: 'Peich', sans-serif;
+        src: url('$lib/Peich-Regular.otf') format('otf');
     }
 
     h2 {
@@ -412,7 +436,8 @@
 
     .qualify-wrapper { 
         width: 100vw; 
-        min-height: var(--base-h) !important; 
+        height: auto !important;
+        min-height: var(--base-h); 
         background: var(--dark); 
         display: flex;
         align-items: center;
@@ -429,7 +454,7 @@
         justify-content: center;
         background-color: var(--cream);
         color: var(--dark);
-        height: 70%;
+        min-height: 70%;
         padding-left: 5vw;
         padding-right: 1vw;
         background: color-mix(in srgb, var(--cream), var(--dark) 45%);
@@ -485,6 +510,8 @@
     .teacher-box {
         color: var(--cream); 
         padding: 0 5vw;
+        flex-grow: 1;
+        height: auto;
     }
 
     .btn-container {
@@ -620,6 +647,7 @@
 
     .questions-content {
         margin: 5vw;
+        width: 90vw !important;
     }
 
     .questions-title { 
