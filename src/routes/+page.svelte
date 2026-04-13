@@ -24,7 +24,7 @@
             answer: "More details about the process."
         }
     ];
-    // svelte-ignore non_reactive_update
+
     let faqIndex = $state<number | null>(null);
     function toggle(i: number) {
         if (faqIndex === i) faqIndex = null; else faqIndex = i;
@@ -40,8 +40,8 @@
                 src={img.src}
                 alt={img.alt}
                 style="
-                    left: calc({img.x} * var(--w));
-                    top: calc({img.y} * var(--h));
+                    left: calc({img.x} * calc(100vw / 1440));
+                    top: calc({img.y * 1.4} * calc(100vw * 9 / 16 / 1440));
                     transform: translate(-50%, -50%);
                 "
             />
@@ -85,20 +85,22 @@
         </div>
     </div>
     <div class="guide-wrapper">
-        <svg class="info-ground" viewBox="0 0 1440 71" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style="width: 100%; height: auto; transform: rotate(180deg); margin-top: -1px;">
+        <svg class="info-ground" viewBox="0 0 1440 71" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style="width: 100%; height: auto; transform: rotate(180deg);">
             <path d="M1108.19 0L1440 45.71L1438.12 71H0V0L144.699 45.71L480.499 18.88L831.268 45.71L1108.19 0Z" fill="var(--dark)"/>
         </svg>
         <img class="star star-right" src="https://placehold.co/317x317" alt="" />
         <img class="star star-left" src="https://placehold.co/290x290" alt="" />
-        <h2 class="guide-title">DON’T KNOW WHERE <br/>TO START?</h2>
-        <div class="gallery-container">
-            <div>
-                <img src="https://placehold.co/1600x900" alt="" />
-                <img src="https://placehold.co/1600x900" alt="" />
-            </div>
-            <div>
-                <img src="https://placehold.co/1600x900" alt="" />
-                <button class="btn-container btn-med">Read our guides →</button>
+        <div class="guide-content">
+            <h2 class="guide-title">DON’T KNOW WHERE <br/>TO START?</h2>
+            <div class="gallery-container">
+                <div>
+                    <img src="https://placehold.co/1600x900" alt="" />
+                    <img src="https://placehold.co/1600x900" alt="" />
+                </div>
+                <div>
+                    <img src="https://placehold.co/1600x900" alt="" />
+                    <button class="btn-container btn-med">Read our<br/>guides →</button>
+                </div>
             </div>
         </div>
     </div>
@@ -116,7 +118,7 @@
                     <p class="question-text"style="opacity: 0.8;">{faq.answer}</p>
                 {/if}
             {/each}
-            <div class="questions-divider" style="top: calc({4564 + faqs.length * 74} * var(--h));"></div>
+            <div class="questions-divider"></div>
         </div>
         <div style="position: relative">
             <svg class="info-ground" viewBox="0 0 1440 71" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style="width: 100%; height: auto; transform: translateY(5px);">
@@ -133,11 +135,12 @@
 
 
 <style>
-    :root {
+    :root { 
         --base-w: 100vw;
         --base-h: calc(100vw * 9 / 16);
         --w: calc(var(--base-w) / 1440);
         --h: calc(var(--base-h) / 1024);
+        --section-height: var(--base-h);
         --cream: #FEFAF4;
         --dark: #1D1312;
     }
@@ -169,6 +172,8 @@
         font-family: 'Peich', sans-serif;
         font-weight: 400;
         line-height: 1;
+        font-size: clamp(2.5rem, 8vw, calc(125 * vw / 16 * 9 / 1024));
+        /* font-size: clamp(1.8rem, 3vw, 4.8rem); */
         word-wrap: break-word;
         margin: 0;
     }
@@ -189,9 +194,13 @@
         margin: 1rem 0;
     }
 
+    a {
+        color: chocolate;
+    }
+
     .hero-wrapper {
         width: var(--base-w);
-        min-height: var(--base-h) !important;
+        min-height: calc(100vw * 9 / 16) !important;
         position: static;
         display: flex;
         justify-content: center;
@@ -232,7 +241,7 @@
     .info-title {
         text-align: center; 
         color: var(--dark); 
-        font-size: calc(150 * var(--h));
+        font-size: clamp(2.5rem, 8vw, calc(125 * 100vw / 16 * 9 / 1024));
         line-height: 0.5; 
         margin: 0;
         padding-top: var(--base-h)*0.5 !important;
@@ -248,6 +257,7 @@
         width: 100vw;
         position: relative;
         justify-content: flex-end;
+        margin-top: 15vw;
     }
 
     .info-homunculus {
@@ -256,7 +266,7 @@
         height: auto;
         left: 50%;
         transform: translateX(-50%);
-        bottom: calc(71 * var(--h) * 0.33);  
+        bottom: calc(71 * (100vw / 16 * 9 / 1024) * 0.33);  
         z-index: 2;
     }
 
@@ -264,7 +274,7 @@
         position: relative;
         width: 100%;
         height: auto;
-        margin-bottom: -1px;
+        margin-bottom: -5px;
     }
 
     .qualify-wrapper { 
@@ -277,7 +287,7 @@
         flex-grow: 1;
     }
 
-    .qualify-title {font-size: calc(90 * var(--h)); } 
+    .qualify-title {font-size: clamp(2.5rem, 8vw, calc(125 * 100vw / 16 * 9 / 1024)); } 
 
     .student-box {
         position: relative;
@@ -309,7 +319,7 @@
         width: calc(0.7 * var(--base-h)) !important;
         height: auto !important;
         transform-origin: top left;
-        transform: rotate(90deg) translateY(-99%);
+        transform: rotate(90deg) translateY(-95%);
         color: var(--cream);
     }
 
@@ -320,7 +330,7 @@
         transform: rotate(-180deg) translateY(-100%);
         margin-bottom: 1px;
     }
-
+    
     .teacher-box {
         color: var(--cream); 
         padding: 0 5vw;
@@ -328,12 +338,14 @@
 
     .btn-container {
         padding: 0.5rem;
+        margin-right: 5vw;
         display: flex;
         align-items: center;
         box-sizing: border-box;
         font-weight: 700; 
         font-family: 'Atkinson Hyperlegible Mono', monospace;
         margin-bottom: 0.5rem;
+        font-size: clamp(1.25rem, 2vw, 3rem);
     }
 
     .btn-light { border-color: var(--dark); background: var(--cream); color: var(--dark); }
@@ -350,10 +362,16 @@
         justify-content: center;
     }
 
-    .guide-wrapper > * {
-        transform: translateY(3vw);
+    .guide-wrapper > .info-ground {
+        position: absolute;
+        top: 0;
+        transform-origin: center;
+        transform: rotate(180deg) translateY(5px) !important;
     }
 
+    .guide-content {
+        margin-top: 10vw;
+    }
     .star {
         position: absolute;
         width: 15vw; 
@@ -362,19 +380,19 @@
     }
 
     .star-right { 
-        left: 75vw;
+        left: 80vw;
         top: calc(0.1*var(--base-h));
     }
 
     .star-left { 
-        left: 10vw;
+        left: 5vw;
         bottom: calc(0.125*var(--base-h));
     }
 
     .guide-title {
         text-align: center; 
         color: var(--dark); 
-        font-size: calc(90 * var(--h)); 
+        font-size: clamp(2.5rem, 8vw, calc(125 * 100vw / 16 * 9 / 1024));
         line-height: 0.8;
     }
 
@@ -388,7 +406,7 @@
     .gallery-container > div {
         display: flex;
         align-items: center;
-        gap: 1rem;
+        gap: 1vw;
     }
 
     .gallery-container > :last-child {
@@ -396,7 +414,7 @@
     }
 
     .gallery-container img {
-        width: calc(40vw);
+        width: calc(35vw);
         height: auto;
         border: 3px var(--dark) solid;
     }
@@ -430,7 +448,7 @@
     }
 
     .questions-title { 
-        font-size: calc(125 * var(--h));
+        font-size: clamp(2.5rem, 8vw, calc(125 * 100vw / 16 * 9 / 1024));
         color: var(--dark); 
     }
     
@@ -444,9 +462,10 @@
 
     .questions-divider {
         width: 100%;
-        width: calc(1168 * var(--w)); height: 0; left: calc(141 * var(--w));
-        outline: calc(3 * var(--h)) var(--dark) solid; outline-offset: calc(-1.5 * var(--h));
+        height: 3px;
+        background-color: var(--dark);
     }
+
     .questions-icon {
         width: 0;
         height: 0;
@@ -482,12 +501,36 @@
     footer h2 {
         text-align: center; color: 
         var(--cream); 
-        font-size: calc(75 * var(--h));
+        font-size: clamp(1.8rem, 3vw, 4.8rem);
     }
 
     footer p {
         text-align: center; 
         color: var(--cream); 
-        font-size: calc(35 * var(--h));
+        font-size: clamp(1.2rem, 2vw, 3.2rem);
+    }
+
+    @media (max-width: 600px) {
+        :root {
+            --base-h: auto;
+        }
+        :global(html) {
+            font-size: 62.5%;
+            /* also looks p good at 75% */
+        }
+        .qualify-wrapper {
+            flex-direction: column;
+        }
+        .student-box {
+            background-color: transparent;
+            color: var(--cream);
+        }
+        .student-box svg path {
+            fill: var(--dark);
+        }
+        .student-box .bottom, .student-box .right {
+            opacity: 0%;
+        }
+
     }
 </style>
