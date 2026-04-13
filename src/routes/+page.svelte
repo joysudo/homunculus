@@ -271,7 +271,7 @@
 
     @font-face {
         font-family: 'Peich', sans-serif;
-        src: url('$lib/Peich-Regular.otf') format('opentype');
+        src: url('/fonts/Peich-Regular.otf') format('opentype');
     }
 
     h2 {
