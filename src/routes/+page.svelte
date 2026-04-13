@@ -275,10 +275,10 @@
     }
 
     h2 {
-        font-family: 'Peich', sans-serif;
-        font-weight: 400;
+        font-family: 'Peich', serif;
+        /* font-weight: 400; */
         line-height: 1;
-        font-size: clamp(2.5rem, 8vw, calc(125 * vw / 16 * 9 / 1024));
+        /* font-size: clamp(2.5rem, 8vw, calc(125 * vw / 16 * 9 / 1024)); */
         /* font-size: clamp(1.8rem, 3vw, 4.8rem); */
         word-wrap: break-word;
         margin: 0;
