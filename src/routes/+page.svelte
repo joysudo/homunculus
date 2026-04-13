@@ -85,7 +85,7 @@
         {/each}
         <img class="hero-logo" src="/images/logo.png" alt="" />
         <section class="rsvp-container" class:submitted={form?.success}>
-            <img class="rsvp-layer" class:submitted={form?.success} src="/images/form-input.png" alt=""/>
+            <img class="rsvp-layer" class:submitted={form?.success} src="/images/form-input.png" alt="" style="filter: brightness(1.1);"/>
             <img class="rsvp-layer" class:submitted2={!form?.success} src="/images/form-input.png" alt=""/>
             {#if form?.success}
                 <p class="form-message">Success! You have RSVPed for <b>Homunculus</b>. <br/>We'll be in touch soon.</p>
@@ -432,12 +432,30 @@
         height: 70%;
         padding-left: 5vw;
         padding-right: 1vw;
+        background: color-mix(in srgb, var(--cream), var(--dark) 45%);
+        z-index: 1;
+    }
+
+    .student-box::before {
+        content: "";
+        position: absolute;
+        inset: 2vw; 
+        --cut: 3vw;
+        background: color-mix(in srgb, var(--cream), var(--dark) 20%);
+            clip-path: polygon(
+            var(--cut) 0, calc(100% - var(--cut)) 0, 
+            100% var(--cut), 100% calc(100% - var(--cut)), 
+            calc(100% - var(--cut)) 100%, var(--cut) 100%, 
+            0 calc(100% - var(--cut)), 0 var(--cut)
+        );
+        z-index: -1; 
     }
 
     .svg-border {
         position: absolute;
         width: 100%;
         height: auto;
+        opacity: 25%;
     }
 
     .top {
@@ -452,7 +470,7 @@
         width: calc(0.7 * var(--base-h)) !important;
         height: auto !important;
         transform-origin: top left;
-        transform: rotate(90deg) translateY(-95%);
+        transform: rotate(90deg) translateY(-99%);
         color: var(--cream);
     }
 
@@ -505,7 +523,7 @@
     .btn-light::after { position: absolute; content: ""; background: var(--cream); inset: 3px; clip-path: inherit; z-index: -1; }
     .btn-med::after { position: absolute; content: ""; background: color-mix(in srgb, var(--cream), var(--dark) 10%); inset: 3px; clip-path: inherit; z-index: -1; }
     .btn-dark { background: var(--cream); color: var(--cream); }
-    .btn-dark::after { position: absolute; content: ""; background: color-mix(in srgb, var(--cream), var(--dark) 90%); inset: 3px; clip-path: inherit; z-index: -1; }
+    .btn-dark::after { position: absolute; content: ""; background: color-mix(in srgb, var(--cream), var(--dark) 80%); inset: 3px; clip-path: inherit; z-index: -1; }
 
     .guide-wrapper {
         width: var(--base-w);
@@ -795,13 +813,23 @@
         .student-box {
             background-color: transparent;
             color: var(--cream);
+            opacity: 100%;
+        }
+        .student-box::before {
+            display: none;
         }
         .student-box svg path {
             fill: var(--dark);
+            opacity: 100%;
         }
         .student-box .bottom, .student-box .right {
             opacity: 0%;
         }
-
+        .btn-container {
+            padding: 1rem 2rem;
+        }
+        .guide-content .btn-container {
+            padding: 1.5rem;
+        }
     }
 </style>
