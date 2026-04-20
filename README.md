@@ -1,42 +1,7 @@
-# sv
+# Homunculus
 
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
+<img width="1920" height="1200" alt="Screenshot 2026-04-19 220936" src="https://github.com/user-attachments/assets/fb8995b5-cebd-46ae-9813-44936f253d6c" />
 
-## Creating a project
+Coding program landing page/proof of concept. Illustrations drawn on Procreate, inspired by linocut. Site built using Sveltekit.
 
-If you're seeing this, you've probably already done this step. Congrats!
-
-```sh
-# create a new project
-npx sv create my-app
-```
-
-To recreate this project with the same configuration:
-
-```sh
-# recreate this project
-npx sv@0.15.1 create --template minimal --types ts --install npm homunculus
-```
-
-## Developing
-
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
-
-```sh
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
-
-## Building
-
-To create a production version of your app:
-
-```sh
-npm run build
-```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
+View on web at [homunculus-two.vercel.app](https://homunculus-two.vercel.app/).
